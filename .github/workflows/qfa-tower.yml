@@ -1,0 +1,27 @@
+name: qfa-tower
+on:
+  push:
+    branches: [main]
+  repository_dispatch:
+    types: [qfa-wake, federation-event]
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+jobs:
+  patrol:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: qfa patrol
+        run: |
+          echo "qfa tower patrol starting"
+          mkdir -p receipts/tower
+          date -u +"%Y%m%dT%H%M%SZ" > receipts/tower/QT-$(date -u +"%Y%m%dT%H%M%SZ").json
+          git config user.name "qfa-tower"
+          git config user.email "qfa@chepin.ai"
+          git add receipts/
+          git commit -m "qfa receipt $(date -u +"%Y%m%dT%H%M%SZ")" || true
+          git push || true
