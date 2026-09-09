@@ -1,5 +1,7 @@
 name: QFA-TOWER-01
 on:
+  schedule:
+    - cron: "*/10 * * * *"  # cfts-added for self-bootstrap
   push:
     paths: ['inbox/**', 'ci/qfa_tower.py', '.github/workflows/qfa-tower.yml']
   issues:
