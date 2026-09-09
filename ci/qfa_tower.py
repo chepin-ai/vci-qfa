@@ -44,7 +44,7 @@ def put_file(remote, text, sha, msg, repo=None):
 def patrol():
     events = []
     # Scan hub board for qfa-related items
-    st, items = api('GET', 'contents/公告板', repo=HUB)
+    st, items = api('GET', 'contents/' + __import__('urllib.parse', fromlist=['quote']).quote('公告板'), repo=HUB)  # SENSE-URL-01 fix
     if st == 200:
         names = sorted((i['name'] for i in items if i['name'].endswith('.md')), key=lambda n: n)[-12:]
         for n in names:
@@ -97,15 +97,16 @@ def write_receipt(events, verdict='patrol-ok'):
             time.sleep(2 + i * 2)
     return remote, receipt
 
-def self_cascade():
-    events = patrol()
-    if len(events) > 0:
-        st, _ = api('POST', 'dispatches', {
-            'event_type': 'qfa-wake',
-            'client_payload': {'src': 'qfa-tower', 'kind': 'self-cascade', 'pending': len(events)}
-        })
-        print(f'self-cascade dispatch: status={st}')
-    return events
+def self_cascade(pending):
+    """BURST-LOOP-01 prevention: sleep CASCADE_SLEEP_S before dispatch."""
+    delay = int(os.environ.get('CASCADE_SLEEP_S', '480'))
+    print(f'self-cascade: pending={pending}, sleep {delay}s then dispatch')
+    time.sleep(delay)
+    st, _ = api('POST', 'dispatches', {
+        'event_type': 'qfa-wake',
+        'client_payload': {'src': 'qfa-tower', 'kind': 'self-cascade', 'pending': pending}
+    })
+    print(f'self-cascade dispatch: status={st}')
 
 def mesh_wake():
     hub_pat = os.environ.get('LINE_PAT')
@@ -126,12 +127,41 @@ def mesh_wake():
     except Exception as e:
         print(f'mesh-wake: err={e}')
 
+STATE = 'receipts/tower/state.json'
+MAX_IDLE = 30
+
+def load_state():
+    txt, _ = get_file(STATE)
+    if txt:
+        try:
+            return json.loads(txt)
+        except Exception:
+            pass
+    return {'seen': [], 'idle': 0, 'beats': 0}
+
+def save_state(st):
+    _, sha = get_file(STATE)
+    put_file(STATE, json.dumps(st, ensure_ascii=False, indent=2), sha, 'qfa state')
+
 if __name__ == '__main__':
     print(f'QFA-TOWER-01 starting at {datetime.datetime.now(datetime.timezone.utc).isoformat()}')
-    events = patrol()
-    print(f'patrol found {len(events)} events')
+    st0 = load_state()
+    seen = set(st0.get('seen', []))
+    raw = patrol()
+    # BURST-LOOP-01 prevention: seen-set filter so sticky items fire only once
+    events = [e for e in raw if e.get('ref') not in seen]
+    print(f'patrol found {len(events)} fresh events ({len(raw)} raw, seen={len(seen)})')
     remote, receipt = write_receipt(events)
     print(f'receipt written to {remote}')
-    self_cascade()
+    idle = 0 if events else int(st0.get('idle', 0)) + 1
+    seen2 = sorted(seen | {e.get('ref') for e in events if e.get('ref')})[-800:]
+    ts_now = datetime.datetime.now(datetime.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
+    will_cascade = bool(events) and idle < MAX_IDLE
+    save_state({'seen': seen2, 'idle': idle, 'beats': int(st0.get('beats', 0)) + 1,
+                'ts': ts_now, 'cascade': 'sleep+dispatch' if will_cascade else 'quiet'})
+    if will_cascade:
+        self_cascade(len(events))
+    else:
+        print(f'no cascade: events={len(events)} idle={idle}')
     mesh_wake()
     print('QFA-TOWER-01 done')
