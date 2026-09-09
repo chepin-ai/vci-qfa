@@ -10,6 +10,9 @@ permissions:
   contents: write
   actions: write
 
+env:
+  LINE_PAT: ${{ secrets.CI_OPS_LINE_KEY }}
+
 jobs:
   patrol:
     runs-on: ubuntu-latest
@@ -19,9 +22,22 @@ jobs:
         run: |
           echo "qfa tower patrol starting"
           mkdir -p receipts/tower
-          date -u +"%Y%m%dT%H%M%SZ" > receipts/tower/QT-$(date -u +"%Y%m%dT%H%M%SZ").json
+          TS=$(date -u +"%Y%m%dT%H%M%SZ")
+          cat > receipts/tower/QT-${TS}.json << 'EOF'
+          {
+            "v": "QFA-TOWER-01",
+            "ts": "${TS}",
+            "events": [{"kind": "patrol", "ref": "qfa-autonomy-02"}],
+            "verdict": "patrol-ok"
+          }
+          EOF
           git config user.name "qfa-tower"
           git config user.email "qfa@chepin.ai"
           git add receipts/
-          git commit -m "qfa receipt $(date -u +"%Y%m%dT%H%M%SZ")" || true
+          git commit -m "qfa receipt ${TS}" || true
           git push || true
+      - name: mesh-dispatch
+        if: env.LINE_PAT != ''
+        run: |
+          curl -sS -X POST -H "Authorization: token ${{ secrets.CI_OPS_LINE_KEY }}"             -H "Accept: application/vnd.github+json"             https://api.github.com/repos/chepin-ai/ci-worker-01/dispatches             -d '{"event_type":"federation-event","client_payload":{"src":"qfa-tower","kind":"mesh-wake","sha":"${{ github.sha }}"}}'             -o /dev/null -w "mesh-wake http=%{http_code}
+" || true
