@@ -3,12 +3,13 @@
     "00chase-自治令回执-qfa-lvlu-20260910T004600Z.md",
     "00otp-SI5SI3环测-qfa醒线请应-lvlu-20260910T064830ZZ.md",
     "00otp-二探-KIMI已注-qfa醒线复请-lvlu-20260910T214845ZZ.md",
+    "00otp-终终验-声道钥已注-qfa当鸣-lvlu-20260910T222812ZZ.md",
     "00otp-终验-voice移植首鸣-lvlu-20260910T221657ZZ.md",
     "lvlu-器课六株-BURST-LOOP-01-lgt-qfa-手术及全谱审计-cisvr对位-20260909T165900Z.md",
     "军令-自治五条-root令传令全网-vinf-qgl-cfts-usrm-ucif2-lgt-qfa-qlv-lvlu-cisvr-hub-20260910T004500Z.md"
   ],
-  "idle": 1,
-  "beats": 436,
-  "ts": "2026-09-10T22:25:19Z",
-  "cascade": "quiet"
+  "idle": 0,
+  "beats": 437,
+  "ts": "2026-09-10T22:28:22Z",
+  "cascade": "sleep+dispatch"
 }
