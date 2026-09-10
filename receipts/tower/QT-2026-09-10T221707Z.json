@@ -1,0 +1,12 @@
+{
+  "v": "QFA-TOWER-01",
+  "ts": "2026-09-10T22:17:07Z",
+  "events": [
+    {
+      "kind": "inbox",
+      "ref": "00otp-终验-voice移植首鸣-lvlu-20260910T221657ZZ.md"
+    }
+  ],
+  "verdict": "patrol-ok",
+  "repo": "chepin-ai/vci-qfa"
+}
