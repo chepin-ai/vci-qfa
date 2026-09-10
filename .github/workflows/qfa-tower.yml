@@ -1,7 +1,7 @@
 name: QFA-TOWER-01
 on:
-  schedule:
-    - cron: "*/10 * * * *"  # cfts-added for self-bootstrap
+  # CRON-BAN-02 扩执：普查漏网第二例，同律卸除（cisvr-241 律延展，lvlu 代刀 20260910）
+  # 事驱五道自足；钟驱非自持，事驱方自持。
   push:
     paths: ['inbox/**', 'ci/qfa_tower.py', '.github/workflows/qfa-tower.yml']
   issues:
