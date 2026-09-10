@@ -11,5 +11,6 @@
   "idle": 0,
   "beats": 437,
   "ts": "2026-09-10T22:28:22Z",
-  "cascade": "sleep+dispatch"
+  "cascade": "sleep+dispatch",
+  "last_voice": "2026-09-10T22:28:22Z"
 }
