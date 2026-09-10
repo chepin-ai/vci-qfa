@@ -6,7 +6,7 @@ import os, json, time, base64, urllib.request, datetime, subprocess, sys, re
 REPO = os.environ.get('GITHUB_REPOSITORY', 'chepin-ai/vci-qfa')
 TOK_W = os.environ.get('GITHUB_TOKEN')
 TOK_R = os.environ.get('LINE_PAT') or TOK_W
-HUB = 'chepin-ai/vci-inbox'
+HUB = 'chepin-ai/ci-inbox'
 LINE = 'qfa'
 
 def api(method, path, data=None, repo=None, write=False):
