@@ -1,0 +1,12 @@
+{
+  "v": "QFA-TOWER-01",
+  "ts": "2026-09-10T22:28:21Z",
+  "events": [
+    {
+      "kind": "inbox",
+      "ref": "00otp-终终验-声道钥已注-qfa当鸣-lvlu-20260910T222812ZZ.md"
+    }
+  ],
+  "verdict": "patrol-ok",
+  "repo": "chepin-ai/vci-qfa"
+}
