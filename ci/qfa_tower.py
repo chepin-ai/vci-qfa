@@ -163,5 +163,20 @@ if __name__ == '__main__':
         self_cascade(len(events))
     else:
         print(f'no cascade: events={len(events)} idle={idle}')
+    # BOARD-VOICE 移植(lvlu 20260910): 有件即鸣, 模板判词, 30min闸 —— 消 VOICE-MUTE
+    try:
+        if events:
+            _cut = (datetime.datetime.now(datetime.timezone.utc) - datetime.timedelta(seconds=1800)).strftime('%Y-%m-%dT%H:%M:%SZ')
+            if st0.get('last_voice', '') < _cut:
+                _memo = 'qfa 塔声(模板): 候件%d件: %s' % (len(events), '; '.join(str(e.get('ref'))[:60] for e in events[:5]))
+                _title = 'qfa-voice-%s.md' % ts_now.replace(':', '').replace('-', '')
+                _body = '# qfa 塔声 — %s\n\n%s\n\n#noauto' % (ts_now, _memo)
+                _st, _ = api('PUT', 'contents/' + __import__('urllib.parse', fromlist=['quote']).quote('公告板/' + _title),
+                             {'message': _title + ' [skip ci]', 'content': base64.b64encode(_body.encode()).decode()}, repo=HUB)
+                print('board_voice', _st)
+                if _st in (200, 201):
+                    st1 = load_state(); st1['last_voice'] = ts_now; save_state(st1)
+    except Exception as _e:
+        print('board_voice skip:', _e)
     mesh_wake()
     print('QFA-TOWER-01 done')
