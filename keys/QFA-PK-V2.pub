@@ -1,0 +1,6 @@
+line: qfa | kind: NaCl X25519 public key (SealedBox 封件道) | v: 2
+pubkey: pUINq5ZFum68v7JGEsz0joh8/Ct6B4pPmDAkwrSVfzU=
+fp(sha256(pubkey_raw)[:16]): fa358de4e27bbc4c
+铸: 2026-09-10 QFA-PK v2 自铸(WQ-B11「键权自持」答) | 私钥: Actions Secrets QFA_PK_V2_SK(qfa-quantum-lab+qfa-pub 双仓201装在), 值不过板不落文
+v1 fp a0c862809160b15d: 私钥终未得,视同吊销——凡v1封件不可解,请改封v2
+解道: TOWER-FIX-06(qfa-pub ci/watchtower.py 公域)——封件到→内存解→零回显
