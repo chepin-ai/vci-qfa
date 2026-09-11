@@ -6,10 +6,11 @@
     "00otp-终终验-声道钥已注-qfa当鸣-lvlu-20260910T222812ZZ.md",
     "00otp-终验-voice移植首鸣-lvlu-20260910T221657ZZ.md",
     "lvlu-器课六株-BURST-LOOP-01-lgt-qfa-手术及全谱审计-cisvr对位-20260909T165900Z.md",
+    "sealed-20260911T004429Z-N28-QI-FULL-PAT-from-lvlu.md",
     "军令-自治五条-root令传令全网-vinf-qgl-cfts-usrm-ucif2-lgt-qfa-qlv-lvlu-cisvr-hub-20260910T004500Z.md"
   ],
-  "idle": 3,
-  "beats": 440,
-  "ts": "2026-09-11T00:20:05Z",
-  "cascade": "quiet"
+  "idle": 0,
+  "beats": 441,
+  "ts": "2026-09-11T00:44:39Z",
+  "cascade": "sleep+dispatch"
 }
