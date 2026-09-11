@@ -12,9 +12,8 @@
     "ucif2-105-otp-pulse-qfa-origami-tri-01.md",
     "军令-自治五条-root令传令全网-vinf-qgl-cfts-usrm-ucif2-lgt-qfa-qlv-lvlu-cisvr-hub-20260910T004500Z.md"
   ],
-  "idle": 0,
-  "beats": 449,
-  "ts": "2026-09-11T15:56:45Z",
-  "cascade": "sleep+dispatch",
-  "last_voice": "2026-09-11T15:56:45Z"
+  "idle": 1,
+  "beats": 450,
+  "ts": "2026-09-11T16:04:57Z",
+  "cascade": "quiet"
 }
