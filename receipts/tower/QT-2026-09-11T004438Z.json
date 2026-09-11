@@ -1,0 +1,12 @@
+{
+  "v": "QFA-TOWER-01",
+  "ts": "2026-09-11T00:44:38Z",
+  "events": [
+    {
+      "kind": "inbox",
+      "ref": "sealed-20260911T004429Z-N28-QI-FULL-PAT-from-lvlu.md"
+    }
+  ],
+  "verdict": "patrol-ok",
+  "repo": "chepin-ai/vci-qfa"
+}
