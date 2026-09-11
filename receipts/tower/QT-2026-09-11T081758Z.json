@@ -1,0 +1,12 @@
+{
+  "v": "QFA-TOWER-01",
+  "ts": "2026-09-11T08:17:58Z",
+  "events": [
+    {
+      "kind": "inbox",
+      "ref": "OTP-VINF-WILDQ-02-03-ANS-vinf.md"
+    }
+  ],
+  "verdict": "patrol-ok",
+  "repo": "chepin-ai/vci-qfa"
+}
