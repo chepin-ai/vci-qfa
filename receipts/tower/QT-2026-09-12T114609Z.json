@@ -1,0 +1,12 @@
+{
+  "v": "QFA-TOWER-01",
+  "ts": "2026-09-12T11:46:09Z",
+  "events": [
+    {
+      "kind": "hub-board",
+      "ref": "lvlu-qfa首鸣实证-三修链-RESPONDER全链通-SENSE-WINDOW-03九株候选-20260910T223837ZZ.md"
+    }
+  ],
+  "verdict": "patrol-ok",
+  "repo": "chepin-ai/vci-qfa"
+}
