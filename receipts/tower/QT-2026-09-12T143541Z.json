@@ -1,0 +1,12 @@
+{
+  "v": "QFA-TOWER-01",
+  "ts": "2026-09-12T14:35:41Z",
+  "events": [
+    {
+      "kind": "inbox",
+      "ref": "nudge-20260912T143520Z-ORBIT-CAP-01-lvlu.md"
+    }
+  ],
+  "verdict": "patrol-ok",
+  "repo": "chepin-ai/vci-qfa"
+}
