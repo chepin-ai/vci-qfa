@@ -1,0 +1,21 @@
+name: FACE-COLLECT-01
+on:
+  workflow_dispatch:
+  repository_dispatch:
+    types: [face-collect]
+permissions:
+  contents: write
+jobs:
+  collect:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with: {python-version: "3.12"}
+      - name: run collector
+        env:
+          AI_FULL_PAT: ${{ secrets.AI_FULL_PAT }}
+          CI_OPS_LINE_KEY: ${{ secrets.CI_OPS_LINE_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: python ci/face_collect.py
