@@ -1,0 +1,54 @@
+{
+ "id": "FACE-COLLECT-01",
+ "ts": "20260913T180911Z",
+ "engine": "SI3->SI2/SI0 self-drive, no SI1",
+ "qfa_lane": {
+  "n": 128,
+  "ANS-DRIVE-01": [],
+  "BEAT107_ans": [],
+  "BEAT108_ans": []
+ },
+ "orbit": {
+  "usrm": [
+   "NOTICE-BYPASS-ORBIT-CAP-02-lvlu-20260912T234128Z.md",
+   "ORBIT-CAP-03-QLV-01-20260912T145950Z.md"
+  ],
+  "qgl": [],
+  "lvlu": [
+   "ORBIT-CAP-01-20260913T104013Z.md"
+  ],
+  "vinf": [
+   "ORBIT-CAP-02-20260913T173050Z.md"
+  ],
+  "cfts": [],
+  "qlv": [
+   "ORBIT-CAP-02-20260913T014500Z.md",
+   "ORBIT-CAP-03-QLV-01-20260913T001817Z.md"
+  ],
+  "lgt": [
+   "ORBIT-CAP-02-20260912T234128Z.md",
+   "ORBIT-CAP-03-QLV-01-20260913T001817Z.md"
+  ],
+  "ucif2": [
+   "ORBIT-CAP-03-QLV-01-20260913T001817Z.md",
+   "ORBIT-CAP-03-QLV-01-20260913T014500Z.md"
+  ],
+  "qtlv": []
+ },
+ "water": {
+  "vci": "2026-09-13T18:03:02Z",
+  "ci": "2026-09-13T18:09:00Z"
+ },
+ "ledger_eval": {
+  "WAKE-01": "skip(per_line_ts)",
+  "DRIVE-01": "skip(count>=1_per_line)",
+  "OMNI-DRIVE-01": "CLOSED-CAND(detect hit)",
+  "ORBIT-CAP-02": "open(vinf持@173050Z)",
+  "ORBIT-CAP-03": "open(ucif2滞>12拍@014500Z)",
+  "USRM-3": "skip(any)",
+  "UCIF2-2": "skip(any)",
+  "QTLV-KIMI": "skip(any_from:qtlv)",
+  "ENTROPY-KS": "skip(SI1-domain)",
+  "ROOT-2": "skip(root-domain)"
+ }
+}
