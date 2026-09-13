@@ -22,13 +22,14 @@
     "nudge-20260912T173125Z-ORBIT-CAP-02-lvlu.md",
     "nudge-20260913T003449Z-ORBIT-CAP-01-lvlu.md",
     "nudge-20260913T014825Z-ORBIT-CAP-01-lvlu.md",
+    "nudge-20260913T032807Z-ORBIT-CAP-01-lvlu.md",
     "sealed-20260911T004429Z-N28-QI-FULL-PAT-from-lvlu.md",
     "sealed-20260911T212314Z-N29-QI-FULL-PAT-v2-from-lvlu.md",
     "ucif2-105-otp-pulse-qfa-origami-tri-01.md",
     "军令-自治五条-root令传令全网-vinf-qgl-cfts-usrm-ucif2-lgt-qfa-qlv-lvlu-cisvr-hub-20260910T004500Z.md"
   ],
-  "idle": 2,
-  "beats": 486,
-  "ts": "2026-09-13T01:57:04Z",
-  "cascade": "quiet"
+  "idle": 0,
+  "beats": 487,
+  "ts": "2026-09-13T03:28:21Z",
+  "cascade": "sleep+dispatch"
 }
