@@ -1,0 +1,53 @@
+{
+ "id": "BOOKS-KEEPER-01",
+ "ts": "20260914T201419Z",
+ "mode": "outbox-fix",
+ "clock": "VOID",
+ "clone_rc": 0,
+ "layout": {
+  "outbox_cand": [
+   "outbox/qfa-outbox.json",
+   "docs/qfa-outbox-20260826.json"
+  ],
+  "wm_cand": [
+   "results/rm-exp/rm_oq_03_diag_chain.json",
+   "ure/chain.jsonl"
+  ],
+  "cap_cand": [
+   "federation/handshakes/CAP-QLV-015.bridge.json",
+   "ci/state/angscape.json",
+   "capsule/CAP-088.json",
+   "capsule/CAP-052.json",
+   "capsule/CAP-021.json",
+   "capsule/CAP-060.json",
+   "capsule/CAP-041.json",
+   "capsule/CAP-096.json",
+   "capsule/CAP-028.json",
+   "capsule/CAP-045.json"
+  ]
+ },
+ "cap_latest": {
+  "n": 129,
+  "file": "capsule/CAP-129.json",
+  "cap_hash": "f82f447a5e9b866d",
+  "prev_cap_hash": "ac4db3a2d4d777d2"
+ },
+ "tails": {
+  "results/rm-exp/rm_oq_03_diag_chain.json": "unparsed: Expecting value: line 1 column 1 (char 0)",
+  "ure/chain.jsonl": {
+   "hash": "c2d4fc707dd1caa81fe7caf1584c80e169e315fd37879f823bf33b09457b126d",
+   "seq": 22
+  },
+  "outbox/qfa-outbox.json": "unparsed: Expecting value: line 1 column 1 (char 0)",
+  "docs/qfa-outbox-20260826.json": "unparsed: Expecting value: line 1 column 1 (char 0)"
+ },
+ "outbox_new": {
+  "seq": 296,
+  "sha256_16": "c0e7e05428a943a1",
+  "prev_16": "36cb21a372770219",
+  "fmt": "json"
+ },
+ "push_rc": 0,
+ "push_tail": "Current branch main is up to date.\n   29ec8f9..ba105c9  HEAD -> main\n",
+ "verdict": "outbox-fixed"
+}
