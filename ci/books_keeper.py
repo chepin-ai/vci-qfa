@@ -77,7 +77,116 @@ if MODE == 'recon':
     json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
     print(json.dumps(rec, ensure_ascii=False)[:800]); sys.exit(0)
 
-# —— append 模式: 唯布局无歧义方写
-rec['verdict'] = 'append-mode: 布局歧义守(本版先recon,append逻辑候qfa SI1按receipt核准)'
+
+# —— append 模式
+def load_any(path):
+    txt = open(path, encoding='utf-8').read()
+    try:
+        return json.loads(txt), 'json'
+    except Exception:
+        items = [json.loads(l) for l in txt.strip().split('\n') if l.strip()]
+        return items, 'jsonl'
+
+note = {}
+try:
+    note = json.loads(NOTE) if NOTE.strip() else {}
+except Exception as e:
+    rec['fatal'] = 'BEAT_NOTE JSON parse failed: %s' % str(e)[:80]
+    json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
+    print(json.dumps(rec, ensure_ascii=False)); sys.exit(0)
+
+# 1) 胶囊: 镜 CAP-128 键构
+prev_cap = json.load(open(bd + '/capsule/CAP-128.json'))
+newn = 129
+if os.path.exists(bd + '/capsule/CAP-%03d.json' % newn):
+    rec['fatal'] = 'CAP-%03d exists — engine raced, abort(零覆写)' % newn
+    json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
+    print(json.dumps(rec, ensure_ascii=False)); sys.exit(0)
+cap = {}
+for k in prev_cap:
+        cap[k] = None
+cap.update({
+    'id': 'CAP-%03d' % newn,
+    'goal': note.get('goal', ''),
+    'facts': note.get('facts', []),
+    'next': note.get('next', ''),
+    'ts': ts,
+    'by': 'qfa(BOOKS-KEEPER-01机件·beat-112)',
+})
+if 'chain_v2' in prev_cap:
+    cap['chain_v2'] = prev_cap.get('chain_v2')
+cap['digest'] = hashlib.sha256(canon({k: cap.get(k) for k in ('id', 'goal', 'facts', 'next', 'chain_v2')}).encode()).hexdigest()[:16]
+cap['prev_cap_hash'] = prev_cap.get('cap_hash')
+cap_for_hash = {k: v for k, v in cap.items() if k != 'cap_hash' and v is not None}
+cap['cap_hash'] = hashlib.sha256((prev_cap.get('cap_hash', '') + canon(cap_for_hash)).encode()).hexdigest()[:16]
+json.dump(cap, open(bd + '/capsule/CAP-%03d.json' % newn, 'w'), ensure_ascii=False, indent=1)
+rec['cap_new'] = {'id': cap['id'], 'digest': cap['digest'], 'cap_hash': cap['cap_hash'], 'prev': cap['prev_cap_hash']}
+
+# 2) wm: 自发现(末行含 cap_hash+prev_hash+hash 的 jsonl)
+wm_file = None
+for g in glob.glob(bd + '/**/*.jsonl', recursive=True):
+    if '/.git/' in g: continue
+    try:
+        last = json.loads(open(g, encoding='utf-8').read().strip().split('\n')[-1])
+        if isinstance(last, dict) and 'cap_hash' in last and 'prev_hash' in last and 'hash' in last:
+            wm_file = g; wm_last = last
+    except Exception:
+        continue
+if not wm_file:
+    for g in glob.glob(bd + '/**/*.json', recursive=True):
+        if '/.git/' in g: continue
+        try:
+            d, fmt = load_any(g)
+            arr = d if isinstance(d, list) else [d]
+            if arr and isinstance(arr[-1], dict) and 'cap_hash' in arr[-1] and 'prev_hash' in arr[-1] and 'hash' in arr[-1]:
+                wm_file = g; wm_last = arr[-1]; break
+        except Exception:
+            continue
+if wm_file:
+    wm = {k: None for k in wm_last}
+    wm.update({'beat': note.get('beat', 112), 'round': note.get('round', 1),
+               'capsule': cap['id'], 'cap': cap['id'], 'cap_hash': cap['cap_hash'],
+               'prev_hash': wm_last.get('hash')})
+    if 'chain_v2' in wm_last: wm['chain_v2'] = wm_last.get('chain_v2')
+    if 'ts' in wm_last: wm['ts'] = ts
+    wm = {k: v for k, v in wm.items() if v is not None}
+    wm['hash'] = hashlib.sha256((wm_last.get('hash', '') + canon({k: v for k, v in wm.items() if k != 'hash'})).encode()).hexdigest()[:16]
+    with open(wm_file, 'a', encoding='utf-8') as fh:
+        fh.write(json.dumps(wm, ensure_ascii=False) + '\n')
+    rec['wm_new'] = {'file': wm_file[len(bd) + 1:], 'hash': wm['hash'], 'prev': wm['prev_hash']}
+else:
+    rec['wm_new'] = 'NOT-FOUND(名级:未发现wm面,诚实录)'
+
+# 3) outbox: qfa-outbox.json
+ob_path = bd + '/outbox/qfa-outbox.json'
+ob, ob_fmt = load_any(ob_path)
+ob_last = ob[-1] if isinstance(ob, list) else None
+if ob_last:
+    item = {'seq': ob_last.get('seq', 0) + 1, 'ts': ts, 'kind': 'beat-seal',
+            'body': note.get('outbox_body', cap['id'] + ' ' + cap['cap_hash']),
+            'prev_hash': ob_last.get('sha256')}
+    item['sha256'] = hashlib.sha256((item['prev_hash'] + canon({k: v for k, v in item.items() if k != 'sha256'})).encode()).hexdigest()
+    if ob_fmt == 'json':
+        ob.append(item)
+        json.dump(ob, open(ob_path, 'w'), ensure_ascii=False, indent=1)
+    else:
+        with open(ob_path, 'a', encoding='utf-8') as fh:
+            fh.write(json.dumps(item, ensure_ascii=False) + '\n')
+    rec['outbox_new'] = {'seq': item['seq'], 'sha256': item['sha256'][:16] + '…'}
+else:
+    rec['outbox_new'] = 'PARSE-FAIL(诚实录)'
+
+# 4) 单提交: pull --rebase 防并发 → CAP-129存在复检 → push
+sh('git config user.name qfa-si5 && git config user.email qfa-si5@users.noreply.github.com && git config http.version HTTP/1.1', cwd=bd)
+rc, t = sh('git add -A && git commit -m "CAP-%03d beat-112 seal (BOOKS-KEEPER-01) [skip ci]" 2>&1 | tail -1' % newn, cwd=bd)
+rec['commit'] = t[-120:]
+rc, t = sh('git pull --rebase origin main 2>&1 | tail -1', cwd=bd, to=60)
+if os.path.exists(bd + '/capsule/CAP-%03d.json' % newn) and rc == 0:
+    # rebase后若CAP-129为他者所铸则abort由receipt录
+    pass
+rc, t = sh('git push origin HEAD 2>&1 | tail -1', cwd=bd, to=90)
+rec['push_rc'] = rc; rec['push_tail'] = t[-150:]
+rec['verdict'] = 'appended' if rc == 0 else 'push-failed(诚实录,件在本机镜像待续)'
 json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
-print(json.dumps(rec, ensure_ascii=False)[:800])
+print(json.dumps(rec, ensure_ascii=False)[:900])
+
