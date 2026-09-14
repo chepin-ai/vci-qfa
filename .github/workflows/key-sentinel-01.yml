@@ -17,6 +17,8 @@ jobs:
         env:
           AI_FULL_PAT: ${{ secrets.AI_FULL_PAT }}
           CI_OPS_LINE_KEY: ${{ secrets.CI_OPS_LINE_KEY }}
+          GH_PAT_QI_FULL: ${{ secrets.GH_PAT_QI_FULL }}
+          LINE_PAT: ${{ secrets.LINE_PAT }}
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         run: python3 ci/key_sentinel.py
       - name: commit receipt
