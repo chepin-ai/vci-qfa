@@ -91,6 +91,71 @@ def load_any(path):
 
 if MODE == 'wm-fix':
    try:
+    # 修桥: 多文档序连形(头件+数组+散行)通用解析 → wm链续 → 原形回写
+    wmp = bd + '/bridge/guard/qfa-watermark.json'
+    raw = open(wmp, encoding='utf-8-sig').read()
+    dec = json.JSONDecoder()
+    docs = []
+    pos = 0
+    while pos < len(raw):
+        while pos < len(raw) and raw[pos] in ' \t\r\n': pos += 1
+        if pos >= len(raw): break
+        d, end = dec.raw_decode(raw, pos)
+        docs.append(d); pos = end
+    rec['wm_docs'] = [type(d).__name__ + (':%d' % len(d) if hasattr(d, '__len__') else '') for d in docs]
+    # 找 wm 条目容器: 数组件或含 cap_hash+prev_hash+hash 的 dict 件
+    items = None; arr_idx = None
+    for i, d in enumerate(docs):
+        if isinstance(d, list) and d and isinstance(d[-1], dict) and 'cap_hash' in d[-1] and 'hash' in d[-1]:
+            items = d; arr_idx = i
+    if items is None:
+        singles = [d for d in docs if isinstance(d, dict) and 'cap_hash' in d and 'hash' in d]
+        if singles:
+            items = singles  # 全散件形: 以散件序列为链
+    if items is None:
+        rec['fatal'] = 'no wm chain container found; docs=' + str(rec['wm_docs'])
+        json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
+        print(json.dumps(rec, ensure_ascii=False)); sys.exit(0)
+    last = items[-1]
+    note2 = {}
+    try: note2 = json.loads(NOTE) if NOTE.strip() else {}
+    except Exception: pass
+    wm = {k: None for k in last}
+    wm.update({'beat': note2.get('beat', 113), 'round': note2.get('round', 1),
+               'capsule': note2.get('cap', ''), 'cap': note2.get('cap', ''),
+               'cap_hash': note2.get('cap_hash', ''), 'prev_hash': last.get('hash')})
+    if 'ts' in last: wm['ts'] = ts
+    wm = {k: v for k, v in wm.items() if v is not None}
+    wm['hash'] = hashlib.sha256((str(last.get('hash', '')) + canon({k: v for k, v in wm.items() if k != 'hash'})).encode()).hexdigest()[:16]
+    items.append(wm)
+    out = '\n'.join(json.dumps(d, ensure_ascii=False, indent=1) for d in docs) + '\n'
+    open(wmp, 'w', encoding='utf-8').write(out)
+    rec['wm_fix'] = {'chain_len': len(items), 'new_hash': wm['hash'], 'prev': wm['prev_hash']}
+    sh('git config user.name qfa-si5 && git config user.email qfa-si5@users.noreply.github.com && git config http.version HTTP/1.1', cwd=bd)
+    sh('git add -A && git commit -m "wm链桥修:多文档通用解析+wm续链 (BOOKS-KEEPER-01 wm-fix) [skip ci]" 2>&1 | tail -1', cwd=bd)
+    rc2, t2 = sh('git pull --rebase origin main 2>&1 | tail -1 && git push origin HEAD 2>&1 | tail -1', cwd=bd, to=100)
+    rec['push_rc'] = rc2; rec['push_tail'] = t2[-150:]
+    rec['verdict'] = 'wm-fixed' if rc2 == 0 else 'push-failed(诚实录)'
+    json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
+    print(json.dumps(rec, ensure_ascii=False)[:700]); sys.exit(0)
+   except Exception:
+    import traceback
+    rec['fatal'] = 'wm-fix exception: ' + traceback.format_exc()[-400:]
+    json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
+    print(json.dumps(rec, ensure_ascii=False)); sys.exit(0)
+
+# —— append 模式
+def load_any(path):
+    txt = open(path, encoding='utf-8-sig').read()
+    try:
+        return json.loads(txt), 'json'
+    except Exception:
+        items = [json.loads(l) for l in txt.strip().split('\n') if l.strip()]
+        return items, 'jsonl'
+
+
+if MODE == 'wm-fix':
+   try:
     # 修桥: qfa-watermark.json 数组+误拼JSONL行 → 归一为正JSON数组, 并续wm链
     wmp = bd + '/bridge/guard/qfa-watermark.json'
     raw = open(wmp, encoding='utf-8-sig').read()
