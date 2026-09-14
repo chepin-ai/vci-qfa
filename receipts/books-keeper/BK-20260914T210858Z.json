@@ -1,0 +1,45 @@
+{
+ "id": "BOOKS-KEEPER-01",
+ "ts": "20260914T210858Z",
+ "mode": "wm-fix",
+ "clock": "VOID",
+ "clone_rc": 0,
+ "layout": {
+  "outbox_cand": [
+   "outbox/qfa-outbox.json",
+   "docs/qfa-outbox-20260826.json"
+  ],
+  "wm_cand": [
+   "results/rm-exp/rm_oq_03_diag_chain.json",
+   "ure/chain.jsonl"
+  ],
+  "cap_cand": [
+   "federation/handshakes/CAP-QLV-015.bridge.json",
+   "ci/state/angscape.json",
+   "capsule/CAP-088.json",
+   "capsule/CAP-052.json",
+   "capsule/CAP-021.json",
+   "capsule/CAP-060.json",
+   "capsule/CAP-041.json",
+   "capsule/CAP-096.json",
+   "capsule/CAP-028.json",
+   "capsule/CAP-045.json"
+  ]
+ },
+ "cap_latest": {
+  "n": 130,
+  "file": "capsule/CAP-130.json",
+  "cap_hash": "cc2980d439d44bd0",
+  "prev_cap_hash": "f82f447a5e9b866d"
+ },
+ "tails": {
+  "results/rm-exp/rm_oq_03_diag_chain.json": "unparsed: Expecting value: line 1 column 1 (char 0)",
+  "ure/chain.jsonl": {
+   "hash": "c2d4fc707dd1caa81fe7caf1584c80e169e315fd37879f823bf33b09457b126d",
+   "seq": 22
+  },
+  "outbox/qfa-outbox.json": "unparsed: Expecting value: line 1 column 1 (char 0)",
+  "docs/qfa-outbox-20260826.json": "unparsed: Expecting value: line 1 column 1 (char 0)"
+ },
+ "fatal": "wm-fix exception: >\n    arr = json.loads(raw[:idx + 1])\n          ^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/json/__init__.py\", line 346, in loads\n    return _default_decoder.decode(s)\n           ^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/usr/lib/python3.12/json/decoder.py\", line 340, in decode\n    raise JSONDecodeError(\"Extra data\", s, end)\njson.decoder.JSONDecodeError: Extra data: line 10 column 2 (char 300)\n"
+}
