@@ -79,6 +79,15 @@ if MODE == 'recon':
 
 
 
+# —— append 模式
+def load_any(path):
+    txt = open(path, encoding='utf-8-sig').read()
+    try:
+        return json.loads(txt), 'json'
+    except Exception:
+        items = [json.loads(l) for l in txt.strip().split('\n') if l.strip()]
+        return items, 'jsonl'
+
 if MODE == 'outbox-fix':
     ob_path = bd + '/outbox/qfa-outbox.json'
     try:
@@ -88,7 +97,19 @@ if MODE == 'outbox-fix':
         rec['fatal'] = 'outbox load fail: %s | head_hex=%s' % (str(e)[:60], raw[:32].hex())
         json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
         print(json.dumps(rec, ensure_ascii=False)); sys.exit(0)
-    ob_last = ob[-1] if isinstance(ob, list) else None
+    if isinstance(ob, dict):
+        lst_key = None
+        for k, v in ob.items():
+            if isinstance(v, list) and v and isinstance(v[-1], dict) and 'seq' in v[-1]:
+                lst_key = k; break
+        if lst_key is None:
+            rec['fatal'] = 'outbox dict but no seq-list key: %s' % list(ob.keys())
+            json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
+            print(json.dumps(rec, ensure_ascii=False)); sys.exit(0)
+        items = ob[lst_key]
+    else:
+        items = ob
+    ob_last = items[-1] if items else None
     if not ob_last:
         rec['fatal'] = 'outbox empty/odd'
         json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
@@ -97,8 +118,9 @@ if MODE == 'outbox-fix':
             'body': NOTE or 'beat-112 CAP-129 f82f447a5e9b866d seal补记(outbox-fix)',
             'prev_hash': ob_last.get('sha256')}
     item['sha256'] = hashlib.sha256((str(item['prev_hash']) + canon({k: v for k, v in item.items() if k != 'sha256'})).encode()).hexdigest()
+    items.append(item)
     if ob_fmt == 'json':
-        ob.append(item); json.dump(ob, open(ob_path, 'w'), ensure_ascii=False, indent=1)
+        json.dump(ob, open(ob_path, 'w'), ensure_ascii=False, indent=1)
     else:
         with open(ob_path, 'a', encoding='utf-8') as fh:
             fh.write(json.dumps(item, ensure_ascii=False) + '\n')
@@ -111,14 +133,6 @@ if MODE == 'outbox-fix':
     json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
     print(json.dumps(rec, ensure_ascii=False)[:700]); sys.exit(0)
 
-# —— append 模式
-def load_any(path):
-    txt = open(path, encoding='utf-8-sig').read()
-    try:
-        return json.loads(txt), 'json'
-    except Exception:
-        items = [json.loads(l) for l in txt.strip().split('\n') if l.strip()]
-        return items, 'jsonl'
 
 note = {}
 try:
