@@ -1,0 +1,35 @@
+name: books-keeper-01
+# BOOKS-KEEPER-01 — qfa账册机件化(KEY-UNIFY-01自愈轨·RCA-KEYBLIND-01正解:值永不入会话,机在vault用钥)
+# CI-ZERO: 纯事件驱动——唯 workflow_dispatch,无定时器
+on:
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'recon=账册布局侦察(只读) / append=CAP/wm/outbox续链'
+        required: true
+        default: 'recon'
+      beat_note:
+        description: 'append模式: 胶囊goal/facts/next注记(名级,值零)'
+        required: false
+        default: ''
+permissions:
+  contents: write
+jobs:
+  keep:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+      - name: books-keep
+        env:
+          GH_PAT_QI_FULL: ${{ secrets.GH_PAT_QI_FULL }}
+          MODE: ${{ inputs.mode }}
+          BEAT_NOTE: ${{ inputs.beat_note }}
+        run: python3 ci/books_keeper.py
+      - name: commit receipt
+        run: |
+          git config user.name "qfa-si5"
+          git config user.email "qfa-si5@users.noreply.github.com"
+          git add receipts/books-keeper/ || true
+          git diff --cached --quiet || git commit -m "books-keeper receipt [skip ci]"
+          git push
