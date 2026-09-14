@@ -1,0 +1,59 @@
+{
+ "id": "BOOKS-KEEPER-01",
+ "ts": "20260914T205951Z",
+ "mode": "append",
+ "clock": "VOID",
+ "clone_rc": 0,
+ "layout": {
+  "outbox_cand": [
+   "outbox/qfa-outbox.json",
+   "docs/qfa-outbox-20260826.json"
+  ],
+  "wm_cand": [
+   "results/rm-exp/rm_oq_03_diag_chain.json",
+   "ure/chain.jsonl"
+  ],
+  "cap_cand": [
+   "federation/handshakes/CAP-QLV-015.bridge.json",
+   "ci/state/angscape.json",
+   "capsule/CAP-088.json",
+   "capsule/CAP-052.json",
+   "capsule/CAP-021.json",
+   "capsule/CAP-060.json",
+   "capsule/CAP-041.json",
+   "capsule/CAP-096.json",
+   "capsule/CAP-028.json",
+   "capsule/CAP-045.json"
+  ]
+ },
+ "cap_latest": {
+  "n": 129,
+  "file": "capsule/CAP-129.json",
+  "cap_hash": "f82f447a5e9b866d",
+  "prev_cap_hash": "ac4db3a2d4d777d2"
+ },
+ "tails": {
+  "results/rm-exp/rm_oq_03_diag_chain.json": "unparsed: Expecting value: line 1 column 1 (char 0)",
+  "ure/chain.jsonl": {
+   "hash": "c2d4fc707dd1caa81fe7caf1584c80e169e315fd37879f823bf33b09457b126d",
+   "seq": 22
+  },
+  "outbox/qfa-outbox.json": "unparsed: Expecting value: line 1 column 1 (char 0)",
+  "docs/qfa-outbox-20260826.json": "unparsed: Expecting value: line 1 column 1 (char 0)"
+ },
+ "cap_new": {
+  "id": "CAP-130",
+  "digest": "f790096d019c72d1",
+  "cap_hash": "cc2980d439d44bd0",
+  "prev": "f82f447a5e9b866d"
+ },
+ "wm_new": "NOT-FOUND(名级:未发现wm面,诚实录)",
+ "outbox_new": {
+  "seq": 297,
+  "sha256": "c9832f0e91339343…"
+ },
+ "commit": " create mode 100644 capsule/CAP-130.json\n",
+ "push_rc": 0,
+ "push_tail": "   ba105c9..d4abe1a  HEAD -> main\n",
+ "verdict": "appended"
+}
