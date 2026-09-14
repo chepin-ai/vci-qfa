@@ -108,10 +108,12 @@ if MODE == 'wm-fix':
     for i, d in enumerate(docs):
         if isinstance(d, list) and d and isinstance(d[-1], dict) and 'cap_hash' in d[-1] and 'hash' in d[-1]:
             items = d; arr_idx = i
+    singles_mode = False
     if items is None:
         singles = [d for d in docs if isinstance(d, dict) and 'cap_hash' in d and 'hash' in d]
         if singles:
             items = singles  # 全散件形: 以散件序列为链
+            singles_mode = True
     if items is None:
         rec['fatal'] = 'no wm chain container found; docs=' + str(rec['wm_docs'])
         json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
@@ -120,6 +122,15 @@ if MODE == 'wm-fix':
     note2 = {}
     try: note2 = json.loads(NOTE) if NOTE.strip() else {}
     except Exception: pass
+    # 幂等: 同cap件已在链即跳(零重试律之防双铸)
+    if note2.get('cap') and any(isinstance(x, dict) and x.get('cap') == note2.get('cap') for x in items):
+        rec['wm_fix'] = {'skipped': 'cap already in chain', 'cap': note2.get('cap'),
+                         'tail_hash': items[-1].get('hash'), 'chain_len': len(items)}
+        rec['verdict'] = 'wm-skip-idempotent'; rec['push_rc'] = 0
+        json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
+        sh('git config user.name qfa-si5 && git config user.email qfa-si5@users.noreply.github.com', cwd=bd)
+        sh('git add -A && git commit -m "wm-fix幂等跳:%s已在链 (BOOKS-KEEPER-01) [skip ci]" 2>&1 | tail -1 && git push origin HEAD 2>&1 | tail -1' % note2.get('cap'), cwd=bd, to=100)
+        print(json.dumps(rec, ensure_ascii=False)); sys.exit(0)
     wm = {k: None for k in last}
     wm.update({'beat': note2.get('beat', 113), 'round': note2.get('round', 1),
                'capsule': note2.get('cap', ''), 'cap': note2.get('cap', ''),
@@ -128,6 +139,8 @@ if MODE == 'wm-fix':
     wm = {k: v for k, v in wm.items() if v is not None}
     wm['hash'] = hashlib.sha256((str(last.get('hash', '')) + canon({k: v for k, v in wm.items() if k != 'hash'})).encode()).hexdigest()[:16]
     items.append(wm)
+    if singles_mode:
+        docs.append(wm)  # 散件形持久化: 新wm件必回入docs,否则写回丢失(beat-113/114 phantom-write 戒)
     out = '\n'.join(json.dumps(d, ensure_ascii=False, indent=1) for d in docs) + '\n'
     open(wmp, 'w', encoding='utf-8').write(out)
     rec['wm_fix'] = {'chain_len': len(items), 'new_hash': wm['hash'], 'prev': wm['prev_hash']}
