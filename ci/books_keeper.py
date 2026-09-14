@@ -90,6 +90,7 @@ def load_any(path):
 
 
 if MODE == 'wm-fix':
+   try:
     # 修桥: qfa-watermark.json 数组+误拼JSONL行 → 归一为正JSON数组, 并续wm链
     wmp = bd + '/bridge/guard/qfa-watermark.json'
     raw = open(wmp, encoding='utf-8-sig').read()
@@ -119,6 +120,11 @@ if MODE == 'wm-fix':
     rec['verdict'] = 'wm-fixed' if rc2 == 0 else 'push-failed(诚实录)'
     json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
     print(json.dumps(rec, ensure_ascii=False)[:700]); sys.exit(0)
+   except Exception:
+    import traceback
+    rec['fatal'] = 'wm-fix exception: ' + traceback.format_exc()[-400:]
+    json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
+    print(json.dumps(rec, ensure_ascii=False)); sys.exit(0)
 
 
 if MODE == 'outbox-fix':
