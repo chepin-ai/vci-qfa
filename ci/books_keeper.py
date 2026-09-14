@@ -88,6 +88,39 @@ def load_any(path):
         items = [json.loads(l) for l in txt.strip().split('\n') if l.strip()]
         return items, 'jsonl'
 
+
+if MODE == 'wm-fix':
+    # 修桥: qfa-watermark.json 数组+误拼JSONL行 → 归一为正JSON数组, 并续wm链
+    wmp = bd + '/bridge/guard/qfa-watermark.json'
+    raw = open(wmp, encoding='utf-8-sig').read()
+    idx = raw.rfind(']')
+    arr = json.loads(raw[:idx + 1])
+    tail = raw[idx + 1:].strip()
+    extras = [json.loads(l) for l in tail.split('\n') if l.strip()] if tail else []
+    items = arr + extras
+    last = items[-1]
+    note2 = {}
+    try: note2 = json.loads(NOTE) if NOTE.strip() else {}
+    except Exception: pass
+    wm = {k: None for k in last}
+    wm.update({'beat': note2.get('beat', 113), 'round': note2.get('round', 1),
+               'capsule': note2.get('cap', ''), 'cap': note2.get('cap', ''),
+               'cap_hash': note2.get('cap_hash', ''), 'prev_hash': last.get('hash')})
+    if 'ts' in last: wm['ts'] = ts
+    wm = {k: v for k, v in wm.items() if v is not None}
+    wm['hash'] = hashlib.sha256((str(last.get('hash', '')) + canon({k: v for k, v in wm.items() if k != 'hash'})).encode()).hexdigest()[:16]
+    items.append(wm)
+    json.dump(items, open(wmp, 'w'), ensure_ascii=False, indent=1)
+    rec['wm_fix'] = {'total': len(items), 'new_hash': wm['hash'], 'prev': wm['prev_hash'], 'extras_absorbed': len(extras)}
+    sh('git config user.name qfa-si5 && git config user.email qfa-si5@users.noreply.github.com && git config http.version HTTP/1.1', cwd=bd)
+    sh('git add -A && git commit -m "wm链桥修:数组归一+wm续链 (BOOKS-KEEPER-01 wm-fix) [skip ci]" 2>&1 | tail -1', cwd=bd)
+    rc2, t2 = sh('git pull --rebase origin main 2>&1 | tail -1 && git push origin HEAD 2>&1 | tail -1', cwd=bd, to=100)
+    rec['push_rc'] = rc2; rec['push_tail'] = t2[-150:]
+    rec['verdict'] = 'wm-fixed' if rc2 == 0 else 'push-failed(诚实录)'
+    json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
+    print(json.dumps(rec, ensure_ascii=False)[:700]); sys.exit(0)
+
+
 if MODE == 'outbox-fix':
     ob_path = bd + '/outbox/qfa-outbox.json'
     try:
