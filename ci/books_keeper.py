@@ -78,9 +78,42 @@ if MODE == 'recon':
     print(json.dumps(rec, ensure_ascii=False)[:800]); sys.exit(0)
 
 
+
+if MODE == 'outbox-fix':
+    ob_path = bd + '/outbox/qfa-outbox.json'
+    try:
+        ob, ob_fmt = load_any(ob_path)
+    except Exception as e:
+        raw = open(ob_path, 'rb').read()
+        rec['fatal'] = 'outbox load fail: %s | head_hex=%s' % (str(e)[:60], raw[:32].hex())
+        json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
+        print(json.dumps(rec, ensure_ascii=False)); sys.exit(0)
+    ob_last = ob[-1] if isinstance(ob, list) else None
+    if not ob_last:
+        rec['fatal'] = 'outbox empty/odd'
+        json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
+        print(json.dumps(rec, ensure_ascii=False)); sys.exit(0)
+    item = {'seq': ob_last.get('seq', 0) + 1, 'ts': ts, 'kind': 'beat-seal',
+            'body': NOTE or 'beat-112 CAP-129 f82f447a5e9b866d seal补记(outbox-fix)',
+            'prev_hash': ob_last.get('sha256')}
+    item['sha256'] = hashlib.sha256((str(item['prev_hash']) + canon({k: v for k, v in item.items() if k != 'sha256'})).encode()).hexdigest()
+    if ob_fmt == 'json':
+        ob.append(item); json.dump(ob, open(ob_path, 'w'), ensure_ascii=False, indent=1)
+    else:
+        with open(ob_path, 'a', encoding='utf-8') as fh:
+            fh.write(json.dumps(item, ensure_ascii=False) + '\n')
+    rec['outbox_new'] = {'seq': item['seq'], 'sha256_16': item['sha256'][:16], 'prev_16': str(item['prev_hash'])[:16], 'fmt': ob_fmt}
+    sh('git config user.name qfa-si5 && git config user.email qfa-si5@users.noreply.github.com && git config http.version HTTP/1.1', cwd=bd)
+    sh('git add -A && git commit -m "outbox#%s beat-112补记 (BOOKS-KEEPER-01 outbox-fix) [skip ci]" 2>&1 | tail -1' % item['seq'], cwd=bd)
+    rc2, t2 = sh('git pull --rebase origin main 2>&1 | tail -1 && git push origin HEAD 2>&1 | tail -1', cwd=bd, to=100)
+    rec['push_rc'] = rc2; rec['push_tail'] = t2[-150:]
+    rec['verdict'] = 'outbox-fixed' if rc2 == 0 else 'push-failed(诚实录)'
+    json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
+    print(json.dumps(rec, ensure_ascii=False)[:700]); sys.exit(0)
+
 # —— append 模式
 def load_any(path):
-    txt = open(path, encoding='utf-8').read()
+    txt = open(path, encoding='utf-8-sig').read()
     try:
         return json.loads(txt), 'json'
     except Exception:
