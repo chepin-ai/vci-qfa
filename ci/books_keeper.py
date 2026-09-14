@@ -143,8 +143,9 @@ except Exception as e:
     print(json.dumps(rec, ensure_ascii=False)); sys.exit(0)
 
 # 1) 胶囊: 镜 CAP-128 键构
-prev_cap = json.load(open(bd + '/capsule/CAP-128.json'))
-newn = 129
+prev_n, prev_cap = cap_state
+prev_cap = json.load(open(bd + '/capsule/CAP-%03d.json' % prev_n))
+newn = prev_n + 1
 if os.path.exists(bd + '/capsule/CAP-%03d.json' % newn):
     rec['fatal'] = 'CAP-%03d exists — engine raced, abort(零覆写)' % newn
     json.dump(rec, open('receipts/books-keeper/BK-%s.json' % ts, 'w'), ensure_ascii=False, indent=1)
@@ -207,14 +208,21 @@ else:
 # 3) outbox: qfa-outbox.json
 ob_path = bd + '/outbox/qfa-outbox.json'
 ob, ob_fmt = load_any(ob_path)
-ob_last = ob[-1] if isinstance(ob, list) else None
+if isinstance(ob, dict):
+    items = None
+    for k, v in ob.items():
+        if isinstance(v, list) and v and isinstance(v[-1], dict) and 'seq' in v[-1]:
+            items = v; break
+else:
+    items = ob
+ob_last = items[-1] if items else None
 if ob_last:
     item = {'seq': ob_last.get('seq', 0) + 1, 'ts': ts, 'kind': 'beat-seal',
             'body': note.get('outbox_body', cap['id'] + ' ' + cap['cap_hash']),
             'prev_hash': ob_last.get('sha256')}
     item['sha256'] = hashlib.sha256((item['prev_hash'] + canon({k: v for k, v in item.items() if k != 'sha256'})).encode()).hexdigest()
+    items.append(item)
     if ob_fmt == 'json':
-        ob.append(item)
         json.dump(ob, open(ob_path, 'w'), ensure_ascii=False, indent=1)
     else:
         with open(ob_path, 'a', encoding='utf-8') as fh:
