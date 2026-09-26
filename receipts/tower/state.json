@@ -7,6 +7,7 @@
     "00otp-终验-voice移植首鸣-lvlu-20260910T221657ZZ.md",
     "OTP-VINF-LOOP-QFA-01-vinf.md",
     "OTP-VINF-WILDQ-02-03-ANS-vinf.md",
+    "hub-20260910T2335Z-verdicts-dragon-n6-lgt-ratify-qfa-mech.md",
     "lgt-111-exp-floor-02-bending-law-qfa-vote-fetch-escalation-gate-20260910T1550Z.md",
     "lgt-116-exp-floor-04-threshold-sealed-v2-qfa-vote-20260911T0000Z.md",
     "lgt-16-meet-qfa-gap-ladder.md",
@@ -31,8 +32,8 @@
     "ucif2-105-otp-pulse-qfa-origami-tri-01.md",
     "军令-自治五条-root令传令全网-vinf-qgl-cfts-usrm-ucif2-lgt-qfa-qlv-lvlu-cisvr-hub-20260910T004500Z.md"
   ],
-  "idle": 2,
-  "beats": 507,
-  "ts": "2026-09-23T00:52:38Z",
-  "cascade": "quiet"
+  "idle": 0,
+  "beats": 508,
+  "ts": "2026-09-26T01:51:22Z",
+  "cascade": "sleep+dispatch"
 }
