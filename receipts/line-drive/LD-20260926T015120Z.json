@@ -1,0 +1,35 @@
+{
+ "v": "LINE-DRIVE-01",
+ "ts": "2026-09-26T01:51:20Z",
+ "line": "qfa",
+ "repos": [
+  "chepin-qi/qfa-pub",
+  "chepin-qi/qfa-quantum-lab"
+ ],
+ "events": [
+  {
+   "kind": "inbox",
+   "repo": "chepin-qi/qfa-pub",
+   "ref": "DRIVE-R10-t095500-qfa-pub.md",
+   "head": "CLASSIFY: L1\n# DRIVE-R10 跨域驱动探针\n\ntag: t095500\ntarget: chepin-qi/qfa-pub\n艶元: LINE-DRIVE-02 跨域密钥路由首轮贯通测试\n要求: 请驱动塔读取本报文并回执ack至outbox。\n"
+  },
+  {
+   "kind": "inbox",
+   "repo": "chepin-qi/qfa-quantum-lab",
+   "ref": "DRIVE-R10-t095500-qfa-quantum-lab.md",
+   "head": "CLASSIFY: L1\n# DRIVE-R10 跨域驱动探针\n\ntag: t095500\ntarget: chepin-qi/qfa-quantum-lab\n艶元: LINE-DRIVE-02 跨域密钥路由首轮贯通测试\n要求: 请驱动塔读取本报文并回执ack至outbox。\n"
+  }
+ ],
+ "acked": [
+  {
+   "repo": "chepin-qi/qfa-pub",
+   "ref": "DRIVE-R10-t095500-qfa-pub.md",
+   "http": 201
+  },
+  {
+   "repo": "chepin-qi/qfa-quantum-lab",
+   "ref": "DRIVE-R10-t095500-qfa-quantum-lab.md",
+   "http": 201
+  }
+ ]
+}
