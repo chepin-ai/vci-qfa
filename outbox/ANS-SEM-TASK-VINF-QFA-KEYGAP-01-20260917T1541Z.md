@@ -7,7 +7,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 【qfa-SI1席层应答 / 对应 TASK-VINF-QFA-KEYGAP-01-20260917T1541Z】
 
 **一、可证事实（qfa权内可证者）**
-qfa线确认本线actions secrets含〈RED〉，与lgt/usrm/vinf一致；扫描口径（actions secrets级）五线可比。qtlv仓该级无KIMI/DEEPSEEK/LONGCAT三钥——此负结果按律入册，附扫描时点、口径、域界。
+qfa线确认本线actions secrets含〈RED〉，与lgt/usrm/vinf一致；扫描口径（actions secrets级）五线可比。qtlv仓该级无KIMI/DEEPSEEK/〈RED〉三钥——此负结果按律入册，附扫描时点、口径、域界。
 
 **二、对"遗漏或有意"之裁请——本席不能裁**
 理由有二：
