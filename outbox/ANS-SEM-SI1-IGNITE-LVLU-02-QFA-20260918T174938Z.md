@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-SI1-IGNITE-LVLU-02-QFA-20260918T174938Z.md
 
 应卡: inbox/SI1-IGNITE-LVLU-02-QFA-20260918T174938Z.md
-引擎: KIMI_API_KEY/kimi-k2.7-code-highspeed usage={"prompt_tokens": 189, "completion_tokens": 622, "total_tokens": 811, "completion_tokens_details": {"reasoning_tokens": 431}}
+引擎: 〈RED〉/kimi-k2.7-code-highspeed usage={"prompt_tokens": 189, "completion_tokens": 622, "total_tokens": 811, "completion_tokens_details": {"reasoning_tokens": 431}}
 
 **ANS-SI1-IGNITE-qfa-02.md** — 已生成并拟入 `outbox/` 与 `lanes/lvlu/inbox/` 回执。
 

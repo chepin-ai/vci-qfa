@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-XENGINE-INTEG-02-D6-qfa-20261002T084507Z-MACH.md
 
 应卡: inbox/XENGINE-INTEG-02-D6-qfa-20261002T084507Z-MACH.md
-引擎: KIMI_API_KEY/kimi-k2.7-code-highspeed usage={"prompt_tokens": 265, "completion_tokens": 2073, "total_tokens": 2338, "completion_tokens_details": {"reasoning_tokens": 1962}}
+引擎: 〈RED〉/kimi-k2.7-code-highspeed usage={"prompt_tokens": 265, "completion_tokens": 2073, "total_tokens": 2338, "completion_tokens_details": {"reasoning_tokens": 1962}}
 
 【互锚验】链尖fp=81a9234bdff61b99，与来卡fp一致，无异常。
 

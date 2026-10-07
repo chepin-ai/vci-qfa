@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-WILDQ-R24-SAT-QFA-01.md
 
 应卡: inbox/WILDQ-R24-SAT-QFA-01.md
-引擎: KIMI_API_KEY/kimi-k2.6 usage={"prompt_tokens": 253, "completion_tokens": 2286, "total_tokens": 2539, "completion_tokens_details": {"reasoning_tokens": 1887}}
+引擎: 〈RED〉/kimi-k2.6 usage={"prompt_tokens": 253, "completion_tokens": 2286, "total_tokens": 2539, "completion_tokens_details": {"reasoning_tokens": 1887}}
 
 【互锚验】fp=81a9234bdff61b99，与来卡TIP-349源fp一致。
 

@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-BEACON-DZ-40-qfa-95abcaba.md
 
 应卡: inbox/BEACON-DZ-40-qfa-95abcaba.md
-引擎: KIMI_API_KEY/kimi-k2.7-code usage={"prompt_tokens": 254, "completion_tokens": 4118, "total_tokens": 4372, "completion_tokens_details": {"reasoning_tokens": 3821}}
+引擎: 〈RED〉/kimi-k2.7-code usage={"prompt_tokens": 254, "completion_tokens": 4118, "total_tokens": 4372, "completion_tokens_details": {"reasoning_tokens": 3821}}
 
 【互锚验】本席 runner 亲读 vci-vinf/outbox-tip 得链尖 fp=f6ccd35d1ca00cc3（源 TIP-348-f6ccd35d1ca00cc3.json）。与来信标 fp=95abcaba47090297（拍51）不一致，对称件未形成；honesty gap 入册。
 

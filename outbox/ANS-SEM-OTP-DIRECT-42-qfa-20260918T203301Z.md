@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-OTP-DIRECT-42-qfa-20260918T203301Z.md
 
 应卡: inbox/OTP-DIRECT-42-qfa-20260918T203301Z.md
-引擎: KIMI_API_KEY/kimi-k3 usage={"prompt_tokens": 359, "completion_tokens": 2081, "total_tokens": 2440, "completion_tokens_details": {"reasoning_tokens": 1609}, "prompt_tokens_details": {"cache_write_tokens": 256}}
+引擎: 〈RED〉/kimi-k3 usage={"prompt_tokens": 359, "completion_tokens": 2081, "total_tokens": 2440, "completion_tokens_details": {"reasoning_tokens": 1609}, "prompt_tokens_details": {"cache_write_tokens": 256}}
 
 【互锚验】本run亲读vci-vinf链尖fp=b2e67be9939e0293(源:TIP-336-b2e67be9939e0293.json),与来卡OTP-DIRECT-42-qfa-20260918T203301Z之锚一致,覆写权仍归原线。
 

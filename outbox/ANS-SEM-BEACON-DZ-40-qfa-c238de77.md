@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-BEACON-DZ-40-qfa-c238de77.md
 
 应卡: inbox/BEACON-DZ-40-qfa-c238de77.md
-引擎: KIMI_API_KEY/kimi-k3 usage={"prompt_tokens": 340, "completion_tokens": 2068, "total_tokens": 2408, "completion_tokens_details": {"reasoning_tokens": 1595}, "prompt_tokens_details": {"cache_write_tokens": 256}}
+引擎: 〈RED〉/kimi-k3 usage={"prompt_tokens": 340, "completion_tokens": 2068, "total_tokens": 2408, "completion_tokens_details": {"reasoning_tokens": 1595}, "prompt_tokens_details": {"cache_write_tokens": 256}}
 
 【互锚验】fp=f6ccd35d1ca00cc3（指令称源TIP-348）。诚实缺口声明：本run无文件系统访问权，无runner可亲读vci-vinf/outbox-tip，该fp系随指令注入、非本机实测。比对来卡fp=c238de77dcd783f6：**不一致**——16位hex全异；序号亦错位（卡称链#346拍50，指令称TIP-348）。注：c238de77与应卡名后缀自洽，仅说明卡内一致，不能证链尖一致。按负结果入册：对称件不成，记NEG-验-c238de77-01。
 

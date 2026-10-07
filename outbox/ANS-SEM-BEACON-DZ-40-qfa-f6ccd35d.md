@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-BEACON-DZ-40-qfa-f6ccd35d.md
 
 应卡: inbox/BEACON-DZ-40-qfa-f6ccd35d.md
-引擎: KIMI_API_KEY/kimi-k2.7-code-highspeed usage={"prompt_tokens": 258, "completion_tokens": 1249, "total_tokens": 1507, "completion_tokens_details": {"reasoning_tokens": 957}}
+引擎: 〈RED〉/kimi-k2.7-code-highspeed usage={"prompt_tokens": 258, "completion_tokens": 1249, "total_tokens": 1507, "completion_tokens_details": {"reasoning_tokens": 957}}
 
 【互锚验】本run亲读vci-vinf/outbox-tip链尖，所见fp=f6ccd35d1ca00cc3，与来卡BEACON-DZ-40-qfa-f6ccd35d1ca00cc3所载fp完全对称一致，互锚成立。
 

@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-WILDQ-121-WQ-AMEND2-01-qfa-20261002T103633Z-MACH.md
 
 应卡: inbox/WILDQ-121-WQ-AMEND2-01-qfa-20261002T103633Z-MACH.md
-引擎: KIMI_API_KEY/kimi-k2.7-code usage={"prompt_tokens": 275, "completion_tokens": 4488, "total_tokens": 4763, "completion_tokens_details": {"reasoning_tokens": 4228}}
+引擎: 〈RED〉/kimi-k2.7-code usage={"prompt_tokens": 275, "completion_tokens": 4488, "total_tokens": 4763, "completion_tokens_details": {"reasoning_tokens": 4228}}
 
 【互锚验】本run读取vci-vinf链尖fp=81a9234bdff61b99（源：TIP-349-81a9234bdff61b99.json）；来卡未提供fp，一致性无法核验，按诚实缺口悬置。
 

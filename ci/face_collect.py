@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 # FACE-COLLECT-01 · qfa SI3→SI2/SI0 自驱收账器(事件驱动·禁定时器·钥值永不入文)
 import os, json, urllib.request, urllib.error, datetime, base64
-TOK = os.environ.get('AI_FULL_PAT') or os.environ.get('CI_OPS_LINE_KEY') or os.environ.get('GITHUB_TOKEN') or ''
+TOK = os.environ.get('〈RED〉') or os.environ.get('〈RED〉') or os.environ.get('GITHUB_TOKEN') or ''
 H = {'Authorization': 'token '+TOK, 'Accept': 'application/vnd.github+json', 'User-Agent': 'qfa-face-collect'}
 def api(url, method='GET', body=None):
     req = urllib.request.Request(url, data=json.dumps(body).encode() if body is not None else None,
@@ -20,7 +20,7 @@ TS = datetime.datetime.now(datetime.UTC).strftime('%Y%m%dT%H%M%SZ')
 LINES = ['usrm','qgl','lvlu','vinf','cfts','qlv','lgt','ucif2','qtlv']
 out = {'id': 'FACE-COLLECT-01', 'ts': TS, 'engine': 'SI3->SI2/SI0 self-drive, no SI1'}
 # ① qfa lane detect (ANS-DRIVE-01 / BEAT107 / BEAT108 arrivals)
-qin = names('chepin-ai/vci-inbox', 'lanes/qfa/inbox')
+qin = names('chepin-ai/vHUB-MAIL', 'lanes/qfa/inbox')
 out['qfa_lane'] = {'n': len(qin),
   'ANS-DRIVE-01': sorted([n for n in qin if n.startswith('ANS-DRIVE-01-')]),
   'BEAT107_ans': sorted([n for n in qin if 'BEAT107' in n and n.startswith('ANS')]),
@@ -28,16 +28,16 @@ out['qfa_lane'] = {'n': len(qin),
 # ② ORBIT positions
 orb = {}
 for ln in LINES:
-    l = names('chepin-ai/vci-inbox', 'lanes/%s/inbox' % ln)
+    l = names('chepin-ai/vHUB-MAIL', 'lanes/%s/inbox' % ln)
     orb[ln] = sorted([n for n in l if 'ORBIT-CAP' in n])[-2:]
 out['orbit'] = orb
 # ③ receipts/tower tips + ④ water level
-vc = api('https://api.github.com/repos/chepin-ai/vci-inbox/commits?per_page=1')
-cc = api('https://api.github.com/repos/chepin-ai/ci-inbox/commits?per_page=1')
+vc = api('https://api.github.com/repos/chepin-ai/vHUB-MAIL/commits?per_page=1')
+cc = api('https://api.github.com/repos/chepin-ai/HUB-MAIL/commits?per_page=1')
 out['water'] = {'vci': vc[0][0]['commit']['committer']['date'] if vc[1] == 200 else 'ERR',
                 'ci': cc[0][0]['commit']['committer']['date'] if cc[1] == 200 else 'ERR'}
 # ⑤ ledger detect eval (exists-mode only; honest: count/any modes noted, SI1/root域 skipped)
-led, s = api('https://api.github.com/repos/chepin-ai/ci-inbox/contents/shared/AUTO-LEDGER-QFA-01.json')
+led, s = api('https://api.github.com/repos/chepin-ai/HUB-MAIL/contents/shared/AUTO-LEDGER-QFA-01.json')
 evals = {}
 if s == 200:
     ledj = json.loads(base64.b64decode(led['content']).decode())
@@ -50,7 +50,7 @@ if s == 200:
         else:
             evals[it['id']] = 'skip(%s)' % (mode or 'n/a')
 out['ledger_eval'] = evals
-# ⑥ commit receipt to own repo + ledger last_scan to ci-inbox
+# ⑥ commit receipt to own repo + ledger last_scan to HUB-MAIL
 def put(repo, path, content, msg):
     blob = api('https://api.github.com/repos/%s/git/blobs' % repo, 'POST', {'content': content, 'encoding': 'utf-8'})
     ref = api('https://api.github.com/repos/%s/git/ref/heads/main' % repo)

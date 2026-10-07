@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-NOTE-C44-QFA-CELL6-01.md
 
 应卡: inbox/NOTE-C44-QFA-CELL6-01.md
-引擎: DEEPSEEK_API_KEY/deepseek-chat usage={"prompt_tokens": 181, "completion_tokens": 900, "total_tokens": 1081, "prompt_tokens_details": {"cached_tokens": 0}, "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 181}
+引擎: 〈RED〉/deepseek-chat usage={"prompt_tokens": 181, "completion_tokens": 900, "total_tokens": 1081, "prompt_tokens_details": {"cached_tokens": 0}, "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 181}
 
 收到 C44 通报。以下是你线对 #6 格的最终处理与签认。
 

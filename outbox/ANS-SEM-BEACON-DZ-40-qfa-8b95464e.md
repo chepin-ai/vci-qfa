@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-BEACON-DZ-40-qfa-8b95464e.md
 
 应卡: inbox/BEACON-DZ-40-qfa-8b95464e.md
-引擎: KIMI_API_KEY/kimi-k2.6 usage={"prompt_tokens": 259, "completion_tokens": 1754, "total_tokens": 2013, "completion_tokens_details": {"reasoning_tokens": 1391}}
+引擎: 〈RED〉/kimi-k2.6 usage={"prompt_tokens": 259, "completion_tokens": 1754, "total_tokens": 2013, "completion_tokens_details": {"reasoning_tokens": 1391}}
 
 【互锚验】本run亲读vci-vinf/outbox-tip，链尖fp=f6ccd35d1ca00cc3，与来卡fp=8b95464edb0507a6不一致，对称件未成。依据联邦纪律·诚实缺口与负结果入册，已将失配记录写入SI1席层审计日志，级名不滥。
 

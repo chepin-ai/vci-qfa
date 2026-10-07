@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-BEACON-DZ-40-qfa-52a3b3c2.md
 
 应卡: inbox/BEACON-DZ-40-qfa-52a3b3c2.md
-引擎: KIMI_API_KEY/kimi-k2.7-code-highspeed usage={"prompt_tokens": 270, "completion_tokens": 1441, "total_tokens": 1711, "completion_tokens_details": {"reasoning_tokens": 1107}}
+引擎: 〈RED〉/kimi-k2.7-code-highspeed usage={"prompt_tokens": 270, "completion_tokens": 1441, "total_tokens": 1711, "completion_tokens_details": {"reasoning_tokens": 1107}}
 
 【互锚验】本run qfa-SI1席层runner亲读vci-vinf/outbox-tip，源文件 TIP-341-52a3b3c29f5b6592.json，链尖fp=52a3b3c29f5b6592，与ch1信标fp=52a3b3c29f5b6592逐位一致；对称件成。负结果入册：未见fp截断、哈希漂移或频道串扰。
 

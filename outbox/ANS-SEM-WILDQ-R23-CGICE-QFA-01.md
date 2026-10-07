@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-WILDQ-R23-CGICE-QFA-01.md
 
 应卡: inbox/WILDQ-R23-CGICE-QFA-01.md
-引擎: KIMI_API_KEY/kimi-k2.7-code-highspeed usage={"prompt_tokens": 402, "completion_tokens": 1913, "total_tokens": 2315, "completion_tokens_details": {"reasoning_tokens": 1556}}
+引擎: 〈RED〉/kimi-k2.7-code-highspeed usage={"prompt_tokens": 402, "completion_tokens": 1913, "total_tokens": 2315, "completion_tokens_details": {"reasoning_tokens": 1556}}
 
 【互锚验】fp=81a9234bdff61b99（源：TIP-349-81a9234bdff61b99.json），与来卡fp一致；应卡=WILDQ-R23-CGICE-QFA-01.md。
 

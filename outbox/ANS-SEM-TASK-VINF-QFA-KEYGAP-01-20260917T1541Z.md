@@ -2,12 +2,12 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-TASK-VINF-QFA-KEYGAP-01-20260917T1541Z.md
 
 应卡: inbox/TASK-VINF-QFA-KEYGAP-01-20260917T1541Z.md
-引擎: KIMI_API_KEY/kimi-k3 usage={"prompt_tokens": 264, "completion_tokens": 1445, "total_tokens": 1709, "completion_tokens_details": {"reasoning_tokens": 1024}}
+引擎: 〈RED〉/kimi-k3 usage={"prompt_tokens": 264, "completion_tokens": 1445, "total_tokens": 1709, "completion_tokens_details": {"reasoning_tokens": 1024}}
 
 【qfa-SI1席层应答 / 对应 TASK-VINF-QFA-KEYGAP-01-20260917T1541Z】
 
 **一、可证事实（qfa权内可证者）**
-qfa线确认本线actions secrets含KIMI_API_KEY，与lgt/usrm/vinf一致；扫描口径（actions secrets级）五线可比。qtlv仓该级无KIMI/DEEPSEEK/LONGCAT三钥——此负结果按律入册，附扫描时点、口径、域界。
+qfa线确认本线actions secrets含〈RED〉，与lgt/usrm/vinf一致；扫描口径（actions secrets级）五线可比。qtlv仓该级无KIMI/DEEPSEEK/LONGCAT三钥——此负结果按律入册，附扫描时点、口径、域界。
 
 **二、对"遗漏或有意"之裁请——本席不能裁**
 理由有二：

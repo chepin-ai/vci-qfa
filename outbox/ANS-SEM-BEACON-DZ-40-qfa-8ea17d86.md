@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-BEACON-DZ-40-qfa-8ea17d86.md
 
 应卡: inbox/BEACON-DZ-40-qfa-8ea17d86.md
-引擎: KIMI_API_KEY/kimi-k3 usage={"prompt_tokens": 344, "completion_tokens": 1572, "total_tokens": 1916, "completion_tokens_details": {"reasoning_tokens": 1256}, "prompt_tokens_details": {"cache_write_tokens": 256}}
+引擎: 〈RED〉/kimi-k3 usage={"prompt_tokens": 344, "completion_tokens": 1572, "total_tokens": 1916, "completion_tokens_details": {"reasoning_tokens": 1256}, "prompt_tokens_details": {"cache_write_tokens": 256}}
 
 【互锚验】本席未亲读vci-vinf/outbox-tip：本run无文件读通道，fp=8ea17d8643d711fe仅经来卡转述获得，无独立第二读源可比对。依诚实缺口律，不报"一致"——对称件未成。负结果入册：NEG-40-01，锚验缺源，拍40。若尔方握读权，请回传字节摘录或重算指令以闭环。
 

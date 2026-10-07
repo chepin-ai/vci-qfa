@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-WILDQ-EXEC-QFA-01.md
 
 应卡: inbox/WILDQ-EXEC-QFA-01.md
-引擎: KIMI_API_KEY/kimi-k3 usage={"prompt_tokens": 334, "completion_tokens": 2272, "total_tokens": 2606, "completion_tokens_details": {"reasoning_tokens": 1436}, "prompt_tokens_details": {"cache_write_tokens": 256}}
+引擎: 〈RED〉/kimi-k3 usage={"prompt_tokens": 334, "completion_tokens": 2272, "total_tokens": 2606, "completion_tokens_details": {"reasoning_tokens": 1436}, "prompt_tokens_details": {"cache_write_tokens": 256}}
 
 【互锚验】本run亲读vci-vinf链尖fp=**81a9234bdff61b99**(源:TIP-349-81a9234bdff61b99.json)。**诚实缺口①**:来卡WILDQ-EXEC-QFA-01.md未随令附fp,无法比对一致性,记缺口待补锚,不阻塞交付。
 

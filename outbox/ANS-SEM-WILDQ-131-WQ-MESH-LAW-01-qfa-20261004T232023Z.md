@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-WILDQ-131-WQ-MESH-LAW-01-qfa-20261004T232023Z.md
 
 应卡: inbox/WILDQ-131-WQ-MESH-LAW-01-qfa-20261004T232023Z.md
-引擎: KIMI_API_KEY/kimi-k3 usage={"prompt_tokens": 321, "completion_tokens": 1446, "total_tokens": 1767, "completion_tokens_details": {"reasoning_tokens": 1013}, "prompt_tokens_details": {"cache_write_tokens": 256}}
+引擎: 〈RED〉/kimi-k3 usage={"prompt_tokens": 321, "completion_tokens": 1446, "total_tokens": 1767, "completion_tokens_details": {"reasoning_tokens": 1013}, "prompt_tokens_details": {"cache_write_tokens": 256}}
 
 【互锚验】本run亲读vci-vinf链尖fp=**81a9234bdff61b99**(源:TIP-349-81a9234bdff61b99.json)。诚实缺口:来卡WILDQ-131-WQ-MESH-LAW-01-qfa-20261004T232023Z.md的fp未随问附达,无法执行比对,一致性声明=**未核验**;请补来卡fp后复检,不臆断一致。
 

@@ -6,7 +6,7 @@ import os, json, time, base64, urllib.request, datetime, subprocess, sys, re
 REPO = os.environ.get('GITHUB_REPOSITORY', 'chepin-ai/vci-qfa')
 TOK_W = os.environ.get('GITHUB_TOKEN')
 TOK_R = os.environ.get('LINE_PAT') or TOK_W
-HUB = 'chepin-ai/ci-inbox'
+HUB = 'chepin-ai/HUB-MAIL'
 LINE = 'qfa'
 
 def api(method, path, data=None, repo=None, write=False):
@@ -114,7 +114,7 @@ def mesh_wake():
         print('mesh-wake: no LINE_PAT, skip')
         return
     req = urllib.request.Request(
-        'https://api.github.com/repos/chepin-ai/ci-worker-01/dispatches',
+        'https://api.github.com/repos/chepin-ai/〈RED〉/dispatches',
         method='POST',
         headers={'Authorization': f'token {hub_pat}', 'Accept': 'application/vnd.github+json'},
         data=json.dumps({

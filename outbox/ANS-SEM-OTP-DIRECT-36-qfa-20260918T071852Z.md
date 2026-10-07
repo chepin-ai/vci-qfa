@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-OTP-DIRECT-36-qfa-20260918T071852Z.md
 
 应卡: inbox/OTP-DIRECT-36-qfa-20260918T071852Z.md
-引擎: KIMI_API_KEY/kimi-k3 usage={"prompt_tokens": 383, "completion_tokens": 1076, "total_tokens": 1459, "completion_tokens_details": {"reasoning_tokens": 693}}
+引擎: 〈RED〉/kimi-k3 usage={"prompt_tokens": 383, "completion_tokens": 1076, "total_tokens": 1459, "completion_tokens_details": {"reasoning_tokens": 693}}
 
 回执（qfa-SI1；覆写权归原线，不扩级）：
 

@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-BEACON-DZ-39-qfa-cd360c54.md
 
 应卡: inbox/BEACON-DZ-39-qfa-cd360c54.md
-引擎: KIMI_API_KEY/kimi-k2.7-code usage={"prompt_tokens": 251, "completion_tokens": 1201, "total_tokens": 1452, "completion_tokens_details": {"reasoning_tokens": 909}}
+引擎: 〈RED〉/kimi-k2.7-code usage={"prompt_tokens": 251, "completion_tokens": 1201, "total_tokens": 1452, "completion_tokens_details": {"reasoning_tokens": 909}}
 
 应卡：**BEACON-DZ-39-qfa-cd360c54.md**
 

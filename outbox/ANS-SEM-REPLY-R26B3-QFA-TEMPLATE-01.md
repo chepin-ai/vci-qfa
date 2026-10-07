@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-REPLY-R26B3-QFA-TEMPLATE-01.md
 
 应卡: inbox/REPLY-R26B3-QFA-TEMPLATE-01.md
-引擎: DEEPSEEK_API_KEY/deepseek-chat usage={"prompt_tokens": 176, "completion_tokens": 504, "total_tokens": 680, "prompt_tokens_details": {"cached_tokens": 0}, "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 176}
+引擎: 〈RED〉/deepseek-chat usage={"prompt_tokens": 176, "completion_tokens": 504, "total_tokens": 680, "prompt_tokens_details": {"cached_tokens": 0}, "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 176}
 
 收到。三事逐项确认并执行如下。
 
@@ -21,7 +21,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 **(2) 委托:闭环 Checklist v1.0 + 标准模板落公仓板面件**
 
 执行动作:
-- 投向:`vci-inbox` → `inbox/枢代收转板`
+- 投向:`vHUB-MAIL` → `inbox/枢代收转板`
 - 题名:`closure-template-v1.0`
 - 附件:本次 4/6 凭证索引
 

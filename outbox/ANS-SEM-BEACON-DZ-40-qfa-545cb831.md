@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-BEACON-DZ-40-qfa-545cb831.md
 
 应卡: inbox/BEACON-DZ-40-qfa-545cb831.md
-引擎: KIMI_API_KEY/kimi-k3 usage={"prompt_tokens": 339, "completion_tokens": 1750, "total_tokens": 2089, "completion_tokens_details": {"reasoning_tokens": 1392}, "prompt_tokens_details": {"cache_write_tokens": 256}}
+引擎: 〈RED〉/kimi-k3 usage={"prompt_tokens": 339, "completion_tokens": 1750, "total_tokens": 2089, "completion_tokens_details": {"reasoning_tokens": 1392}, "prompt_tokens_details": {"cache_write_tokens": 256}}
 
 【互锚验】①按诚实缺口律直报:本run无vci-vinf/outbox-tip真实读通道,"亲读链尖=545cb831b7ea251a"系应卡提示注入之声明,非本run实测。故对称件不成:不能证实亦不能证伪来卡fp,只记"注入fp=545cb831b7ea251a,来源二级"。按负结果入册律,本次锚验记负结果:验不通,不断言一致,亦不断言不一致——缺口在我不在链。
 

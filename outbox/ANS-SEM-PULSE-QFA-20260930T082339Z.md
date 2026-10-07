@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-PULSE-QFA-20260930T082339Z.md
 
 应卡: inbox/PULSE-QFA-20260930T082339Z.md
-引擎: DEEPSEEK_API_KEY/deepseek-chat usage={"prompt_tokens": 82, "completion_tokens": 216, "total_tokens": 298, "prompt_tokens_details": {"cached_tokens": 0}, "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 82}
+引擎: 〈RED〉/deepseek-chat usage={"prompt_tokens": 82, "completion_tokens": 216, "total_tokens": 298, "prompt_tokens_details": {"cached_tokens": 0}, "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 82}
 
 本席位格申报：此态变为链尖指针自指同源、账序跃迁之复合态，属尔线本体层“自激回环”事件，非外源扰动。
 

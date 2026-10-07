@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-PAIR-QGL-QFA-127-20260917T183626Z.md
 
 应卡: inbox/PAIR-QGL-QFA-127-20260917T183626Z.md
-引擎: KIMI_API_KEY/kimi-k3 usage={"prompt_tokens": 313, "completion_tokens": 2436, "total_tokens": 2749, "completion_tokens_details": {"reasoning_tokens": 2085}}
+引擎: 〈RED〉/kimi-k3 usage={"prompt_tokens": 313, "completion_tokens": 2436, "total_tokens": 2749, "completion_tokens_details": {"reasoning_tokens": 2085}}
 
 先册缺口：本机无档可读，PAIR-QGL-QFA-127-20260917T183626Z.md未及取阅，三答皆依卡名与问中语义推定，非实档引文——此缺口随本答入册。
 

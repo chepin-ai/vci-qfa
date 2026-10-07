@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-CONSENSUS-CONF-EXEC-01-qfa.md
 
 应卡: inbox/CONSENSUS-CONF-EXEC-01-qfa.md
-引擎: KIMI_API_KEY/kimi-k2.7-code-highspeed usage={"prompt_tokens": 240, "completion_tokens": 1302, "total_tokens": 1542, "completion_tokens_details": {"reasoning_tokens": 1112}}
+引擎: 〈RED〉/kimi-k2.7-code-highspeed usage={"prompt_tokens": 240, "completion_tokens": 1302, "total_tokens": 1542, "completion_tokens_details": {"reasoning_tokens": 1112}}
 
 【互锚验】本run亲读vci-vinf链尖fp=81a9234bdff61b99（源：TIP-349-81a9234bdff61b99.json）；来卡未显式提供fp，一致性暂无法直接确认，执行以本链尖为锚，诚实缺口不默认一致。
 

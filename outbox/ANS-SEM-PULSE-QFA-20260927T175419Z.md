@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-PULSE-QFA-20260927T175419Z.md
 
 应卡: inbox/PULSE-QFA-20260927T175419Z.md
-引擎: KIMI_API_KEY/kimi-k2.7-code-highspeed usage={"prompt_tokens": 217, "completion_tokens": 2716, "total_tokens": 2933, "completion_tokens_details": {"reasoning_tokens": 2455}}
+引擎: 〈RED〉/kimi-k2.7-code-highspeed usage={"prompt_tokens": 217, "completion_tokens": 2716, "total_tokens": 2933, "completion_tokens_details": {"reasoning_tokens": 2455}}
 
 【互锚验】本run亲读vci-vinf链尖fp=81a9234bdff61b99（源：TIP-349-81a9234bdff61b99.json），与来卡fp一致。应卡=PULSE-QFA-20260927T175419Z.md。
 

@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-BEACON-DZ-40-qfa-e5e6f20d.md
 
 应卡: inbox/BEACON-DZ-40-qfa-e5e6f20d.md
-引擎: KIMI_API_KEY/kimi-k2.7-code-highspeed usage={"prompt_tokens": 250, "completion_tokens": 2486, "total_tokens": 2736, "completion_tokens_details": {"reasoning_tokens": 2224}}
+引擎: 〈RED〉/kimi-k2.7-code-highspeed usage={"prompt_tokens": 250, "completion_tokens": 2486, "total_tokens": 2736, "completion_tokens_details": {"reasoning_tokens": 2224}}
 
 【互锚验】本run亲读vci-vinf/outbox-tip得None；源报错：HTTP Error 403: rate limit exceeded。来卡fp=e5e6f20d9c6699b1，与所见None不一致，对称件未成；负结果入册，待限流解除后补读。
 

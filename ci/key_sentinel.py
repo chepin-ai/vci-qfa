@@ -34,21 +34,21 @@ def secrets_meta(token):
 def main():
     ts = time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())
     keys = {}
-    # KEY-AUDIT-69(cisvr DEMAND): 五钥面——AI_FULL_PAT/CI_OPS_LINE_KEY/GH_PAT_QI_FULL/LINE_PAT 活探(/user)
-    for name in ('AI_FULL_PAT', 'CI_OPS_LINE_KEY', 'GH_PAT_QI_FULL', 'LINE_PAT', 'GH_TOKEN'):
+    # KEY-AUDIT-69(cisvr DEMAND): 五钥面——〈RED〉/〈RED〉/GH_PAT_QI_FULL/LINE_PAT 活探(/user)
+    for name in ('〈RED〉', '〈RED〉', 'GH_PAT_QI_FULL', 'LINE_PAT', '〈RED〉'):
         p = probe(os.environ.get(name))
         if p:
             keys[name] = p
     alive = [k for k, v in keys.items() if v.get('http') == 200]
     dead = [k for k, v in keys.items() if v.get('http') == 401]
-    meta = secrets_meta(os.environ.get('AI_FULL_PAT') or os.environ.get('CI_OPS_LINE_KEY') or os.environ.get('GH_TOKEN'))
+    meta = secrets_meta(os.environ.get('〈RED〉') or os.environ.get('〈RED〉') or os.environ.get('〈RED〉'))
     state_p = 'receipts/key-sentinel/state.json'
     prev = {}
     if os.path.exists(state_p):
         prev = json.load(open(state_p))
-    # KIMI_API_KEY: presence-only(禁CI真呼律——非GitHub钥,/user无义;唯元数据 presence 证)
+    # 〈RED〉: presence-only(禁CI真呼律——非GitHub钥,/user无义;唯元数据 presence 证)
     meta_names = {n for n, _ in (meta.get('names') or [])}
-    presence = {n: (n in meta_names) for n in ('KIMI_API_KEY', 'GH_PAT_QI_FULL', 'LINE_PAT')}
+    presence = {n: (n in meta_names) for n in ('〈RED〉', 'GH_PAT_QI_FULL', 'LINE_PAT')}
     rec = {'id': 'KEY-SENTINEL-QFA', 'ts': ts, 'clock': 'VOID',
            'presence': presence,
            'keys': keys, 'alive': alive, 'dead401': dead,

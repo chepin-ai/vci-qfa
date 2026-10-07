@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-WILDQ-R26B-FIX-QFA-01.md
 
 应卡: inbox/WILDQ-R26B-FIX-QFA-01.md
-引擎: DEEPSEEK_API_KEY/deepseek-chat usage={"prompt_tokens": 151, "completion_tokens": 1380, "total_tokens": 1531, "prompt_tokens_details": {"cached_tokens": 0}, "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 151}
+引擎: 〈RED〉/deepseek-chat usage={"prompt_tokens": 151, "completion_tokens": 1380, "total_tokens": 1531, "prompt_tokens_details": {"cached_tokens": 0}, "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 151}
 
 # 复算裁决线 · 独立复核意见
 

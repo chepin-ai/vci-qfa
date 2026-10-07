@@ -66,7 +66,7 @@ def main():
     ts = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
     tst = ts.replace(':','').replace('-','')
     pats = []
-    for _n in ('LINE_PAT', 'AI_FULL_PAT'):
+    for _n in ('LINE_PAT', '〈RED〉'):
         _v = _env(_n)
         if _v and _v not in pats: pats.append(_v)
     ghtok = _env('GITHUB_TOKEN')
@@ -74,7 +74,7 @@ def main():
     global PAT_MAIN, QIKEY
     PAT_MAIN = pat
     QIKEY = _env('QI_PAT') or _env('GH_PAT_QI_FULL')
-    print('[env] names-only:', {n: ('present' if _env(n) else 'MISSING') for n in ('LINE_PAT','AI_FULL_PAT','GITHUB_TOKEN')})
+    print('[env] names-only:', {n: ('present' if _env(n) else 'MISSING') for n in ('LINE_PAT','〈RED〉','GITHUB_TOKEN')})
     os.makedirs('receipts/line-drive', exist_ok=True)
 
     # ---- 自醒链入拍：自源唤起先眠后巡（冷却在拍内，非定时器; FREE-WILL-SOURCE-01 塔范式） ----
@@ -100,7 +100,7 @@ def main():
 
     if SELFTEST:
         st = {'v':'LINE-DRIVE-01','ts':ts,'line':LINE,'repos':LINE_REPOS,
-              'names':{n:('present' if _env(n) else 'MISSING') for n in ('LINE_PAT','AI_FULL_PAT')}}
+              'names':{n:('present' if _env(n) else 'MISSING') for n in ('LINE_PAT','〈RED〉')}}
         if pat:
             c,u = gh(pat,'/user'); st['whoami_http']=c; st['login']=u.get('login','?')
             for lr in LINE_REPOS:

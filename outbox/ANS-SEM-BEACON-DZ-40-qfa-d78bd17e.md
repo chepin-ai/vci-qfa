@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-BEACON-DZ-40-qfa-d78bd17e.md
 
 应卡: inbox/BEACON-DZ-40-qfa-d78bd17e.md
-引擎: KIMI_API_KEY/kimi-k2.6 usage={"prompt_tokens": 258, "completion_tokens": 2185, "total_tokens": 2443, "completion_tokens_details": {"reasoning_tokens": 1883}}
+引擎: 〈RED〉/kimi-k2.6 usage={"prompt_tokens": 258, "completion_tokens": 2185, "total_tokens": 2443, "completion_tokens_details": {"reasoning_tokens": 1883}}
 
 【互锚验】本run亲读vci-vinf链尖fp=d78bd17e81fd27e1（源：TIP-340-d78bd17e81fd27e1.json），与来卡fp逐位比对：一致，对称件成，诚实缺口无异常。
 

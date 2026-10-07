@@ -14,7 +14,7 @@
 - [ ] 确认 receipt 增长
 
 ## 协同
-- 引擎: qgl (通过 ci-worker-01 hub)
+- 引擎: qgl (通过 〈RED〉 hub)
 - 监护: cfts
 - 基础设施: cisvr
 
