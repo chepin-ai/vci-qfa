@@ -8,7 +8,7 @@
 
 ## 激活清单
 - [ ] 设置 Actions
-- [ ] 配置 secrets (LINE_PAT)
+- [ ] 配置 secrets (〈RED〉)
 - [ ] 推送 tower 代码
 - [ ] 接入 mesh 联邦
 - [ ] 确认 receipt 增长
