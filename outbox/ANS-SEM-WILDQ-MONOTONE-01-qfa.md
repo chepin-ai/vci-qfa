@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-WILDQ-MONOTONE-01-qfa.md
 
 应卡: inbox/WILDQ-MONOTONE-01-qfa.md
-引擎: DEEPSEEK_API_KEY/deepseek-chat usage={"prompt_tokens": 394, "completion_tokens": 2317, "total_tokens": 2711, "prompt_tokens_details": {"cached_tokens": 256}, "prompt_cache_hit_tokens": 256, "prompt_cache_miss_tokens": 138}
+引擎: 〈RED〉/deepseek-chat usage={"prompt_tokens": 394, "completion_tokens": 2317, "total_tokens": 2711, "prompt_tokens_details": {"cached_tokens": 256}, "prompt_cache_hit_tokens": 256, "prompt_cache_miss_tokens": 138}
 
 先直接给判断：**枢案 v0 的 M 作为“联邦级非刚性度/治理债标量”是可用的首测指标，但还不是严格的单调性公式。** 它现在混了三类东西：真正沿波次单调的“未闭环债”、会因 fail-open/缺 fp 等事件跳变的“事故计数”、以及 ask 是否自包含这类“格式/可评审性”指标。若不做分层，M1 的“非增”在联邦级会被波次边界上的新 ask、新 finding、fail-open 事件破坏；M2 的“M_line=0 ⇔ 可升级刚性态”也过强，需要加“无未决依赖、无外部输入、评审双轮完成、制品自包含可重放”等条件。
 
