@@ -34,8 +34,8 @@ def secrets_meta(token):
 def main():
     ts = time.strftime('%Y%m%dT%H%M%SZ', time.gmtime())
     keys = {}
-    # KEY-AUDIT-69(cisvr DEMAND): 五钥面——〈RED〉/〈RED〉/GH_PAT_QI_FULL/LINE_PAT 活探(/user)
-    for name in ('〈RED〉', '〈RED〉', 'GH_PAT_QI_FULL', 'LINE_PAT', '〈RED〉'):
+    # KEY-AUDIT-69(cisvr DEMAND): 五钥面——〈RED〉/〈RED〉/GH_PAT_QI_FULL/〈RED〉 活探(/user)
+    for name in ('〈RED〉', '〈RED〉', 'GH_PAT_QI_FULL', '〈RED〉', '〈RED〉'):
         p = probe(os.environ.get(name))
         if p:
             keys[name] = p
@@ -48,7 +48,7 @@ def main():
         prev = json.load(open(state_p))
     # 〈RED〉: presence-only(禁CI真呼律——非GitHub钥,/user无义;唯元数据 presence 证)
     meta_names = {n for n, _ in (meta.get('names') or [])}
-    presence = {n: (n in meta_names) for n in ('〈RED〉', 'GH_PAT_QI_FULL', 'LINE_PAT')}
+    presence = {n: (n in meta_names) for n in ('〈RED〉', 'GH_PAT_QI_FULL', '〈RED〉')}
     rec = {'id': 'KEY-SENTINEL-QFA', 'ts': ts, 'clock': 'VOID',
            'presence': presence,
            'keys': keys, 'alive': alive, 'dead401': dead,
