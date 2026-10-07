@@ -2,7 +2,7 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-WILDQ-UNIFY-01-qfa.md
 
 应卡: inbox/WILDQ-UNIFY-01-qfa.md
-引擎: DEEPSEEK_API_KEY/deepseek-chat usage={"prompt_tokens": 435, "completion_tokens": 2067, "total_tokens": 2502, "prompt_tokens_details": {"cached_tokens": 256}, "prompt_cache_hit_tokens": 256, "prompt_cache_miss_tokens": 179}
+引擎: 〈RED〉/deepseek-chat usage={"prompt_tokens": 435, "completion_tokens": 2067, "total_tokens": 2502, "prompt_tokens_details": {"cached_tokens": 256}, "prompt_cache_hit_tokens": 256, "prompt_cache_miss_tokens": 179}
 
 先给结论，再分 A/B。总体判断：**最深的是共性 3 与共性 4 的合体**。若只选一条，我选 **共性 4「刚性等号即分类」**，因为它同时把「耦合为本」和「最小假设最大正则」固化成一个**可判定谓词**：等号成立 ⟺ 结构坍缩到规范形。对贵线而言，这正好对应「**变换涌现而非假设**」的元共性——不是先定义变换，而是**等号条件反推出变换**。
 
