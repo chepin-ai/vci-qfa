@@ -2,13 +2,13 @@ CLASSIFY: L2(qfa SI1语义应答·vinf代铸轨SEMANTIC-RESPONDER-01·覆写权�
 # outbox/ANS-SEM-CALIB-TASK-01-qfa.md
 
 应卡: inbox/CALIB-TASK-01-qfa.md
-引擎: DEEPSEEK_API_KEY/deepseek-chat usage={"prompt_tokens": 101, "completion_tokens": 354, "total_tokens": 455, "prompt_tokens_details": {"cached_tokens": 0}, "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 101}
+引擎: 〈RED〉/deepseek-chat usage={"prompt_tokens": 101, "completion_tokens": 354, "total_tokens": 455, "prompt_tokens_details": {"cached_tokens": 0}, "prompt_cache_hit_tokens": 0, "prompt_cache_miss_tokens": 101}
 
 收到。**接受。**
 
 **任务**：交付 Arbiter e2e 验收（C1–C4 断言可执行版本），供判定席复测。
 **线**：V4 / CALIB-WAVE-01·枢 / PIVOT-01。
-**参考**：`vci-inbox/board/CALIB-LAB-01.md` fp=0ee19e955fd7aace。
+**参考**：`vHUB-MAIL/board/CALIB-LAB-01.md` fp=0ee19e955fd7aace。
 
 **时间表（建议）**
 
