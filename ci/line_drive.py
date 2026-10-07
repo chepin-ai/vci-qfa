@@ -1,7 +1,7 @@
 # line_drive.py — LINE-DRIVE-02 · 公域塔驱动私域线仓（跨域: chepin-qi 由 QI_PAT 路由）
 # 升级: LINE_REPOS 支持 owner/repo 全形式; 缺省前缀 chepin-ai; 按账户选钥(QI_PAT||GH_PAT_QI_FULL)（系统共识: 公域CI通道驱动私域CI, 私域零Actions依赖）
 # 纯事件驱动: 无定时器语义; 由 repository_dispatch / workflow_dispatch / 塔内链唤起。
-# 链: LINE_PAT 读私域线仓 inbox/** → 未消费件出收执 → 回写私域 outbox/ + 本塔 receipts → 有候件自唤下一拍。
+# 链: 〈RED〉 读私域线仓 inbox/** → 未消费件出收执 → 回写私域 outbox/ + 本塔 receipts → 有候件自唤下一拍。
 # 律: 名值分离(NAME-HYGIENE-97)——值永不入文、永不打印; seen集防重; 空转计数熔断。
 import json, os, sys, time, base64, urllib.request, urllib.error, subprocess
 
@@ -66,7 +66,7 @@ def main():
     ts = time.strftime('%Y-%m-%dT%H:%M:%SZ', time.gmtime())
     tst = ts.replace(':','').replace('-','')
     pats = []
-    for _n in ('LINE_PAT', '〈RED〉'):
+    for _n in ('〈RED〉', '〈RED〉'):
         _v = _env(_n)
         if _v and _v not in pats: pats.append(_v)
     ghtok = _env('GITHUB_TOKEN')
@@ -74,7 +74,7 @@ def main():
     global PAT_MAIN, QIKEY
     PAT_MAIN = pat
     QIKEY = _env('QI_PAT') or _env('GH_PAT_QI_FULL')
-    print('[env] names-only:', {n: ('present' if _env(n) else 'MISSING') for n in ('LINE_PAT','〈RED〉','GITHUB_TOKEN')})
+    print('[env] names-only:', {n: ('present' if _env(n) else 'MISSING') for n in ('〈RED〉','〈RED〉','GITHUB_TOKEN')})
     os.makedirs('receipts/line-drive', exist_ok=True)
 
     # ---- 自醒链入拍：自源唤起先眠后巡（冷却在拍内，非定时器; FREE-WILL-SOURCE-01 塔范式） ----
@@ -100,7 +100,7 @@ def main():
 
     if SELFTEST:
         st = {'v':'LINE-DRIVE-01','ts':ts,'line':LINE,'repos':LINE_REPOS,
-              'names':{n:('present' if _env(n) else 'MISSING') for n in ('LINE_PAT','〈RED〉')}}
+              'names':{n:('present' if _env(n) else 'MISSING') for n in ('〈RED〉','〈RED〉')}}
         if pat:
             c,u = gh(pat,'/user'); st['whoami_http']=c; st['login']=u.get('login','?')
             for lr in LINE_REPOS:
