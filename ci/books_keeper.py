@@ -122,8 +122,8 @@ if MODE == 'wm-fix':
     note2 = {}
     try: note2 = json.loads(NOTE) if NOTE.strip() else {}
     except Exception: pass
-    # 幂等: 同cap件已在链即跳(零重试律之防双铸)
-    if note2.get('cap') and any(isinstance(x, dict) and x.get('cap') == note2.get('cap') for x in items):
+    # 幂等: 同cap件已在链即跳(零重试律之防双铸); repair=true 则跳过幂等闸,铸勘误修件(beat-121 wm259 cap_hash误植器课:链不诬,修件续链不涂改)
+    if note2.get('cap') and not note2.get('repair') and any(isinstance(x, dict) and x.get('cap') == note2.get('cap') for x in items):
         rec['wm_fix'] = {'skipped': 'cap already in chain', 'cap': note2.get('cap'),
                          'tail_hash': items[-1].get('hash'), 'chain_len': len(items)}
         rec['verdict'] = 'wm-skip-idempotent'; rec['push_rc'] = 0
@@ -136,6 +136,7 @@ if MODE == 'wm-fix':
                'capsule': note2.get('cap', ''), 'cap': note2.get('cap', ''),
                'cap_hash': note2.get('cap_hash', ''), 'prev_hash': last.get('hash')})
     if 'ts' in last: wm['ts'] = ts
+    if note2.get('note'): wm['note'] = note2['note']
     wm = {k: v for k, v in wm.items() if v is not None}
     wm['hash'] = hashlib.sha256((str(last.get('hash', '')) + canon({k: v for k, v in wm.items() if k != 'hash'})).encode()).hexdigest()[:16]
     items.append(wm)
@@ -186,6 +187,7 @@ if MODE == 'wm-fix':
                'capsule': note2.get('cap', ''), 'cap': note2.get('cap', ''),
                'cap_hash': note2.get('cap_hash', ''), 'prev_hash': last.get('hash')})
     if 'ts' in last: wm['ts'] = ts
+    if note2.get('note'): wm['note'] = note2['note']
     wm = {k: v for k, v in wm.items() if v is not None}
     wm['hash'] = hashlib.sha256((str(last.get('hash', '')) + canon({k: v for k, v in wm.items() if k != 'hash'})).encode()).hexdigest()[:16]
     items.append(wm)
