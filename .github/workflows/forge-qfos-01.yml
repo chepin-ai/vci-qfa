@@ -9,6 +9,8 @@ on:
       beat_note:
         required: false
         default: "{}"
+permissions:
+  contents: write
 jobs:
   forge:
     runs-on: ubuntu-latest
