@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 set -euo pipefail
 REPO=chepin-qi/qfa-os
+TS=$(date -u +%Y%m%dT%H%M%SZ)
+LOGDIR="$GITHUB_WORKSPACE/receipts/forge-qfos/logs"
+mkdir -p "$LOGDIR"
+# ERRATA-PROCESS-03: runner python3 is bare; engine verifiers need numpy. Conditional install.
+python3 -c 'import numpy' 2>/dev/null || python3 -m pip install --quiet numpy
 code=$(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: token $QI" "https://api.github.com/repos/$REPO")
 created=false
 if [ "$code" = "404" ]; then
@@ -23,7 +28,7 @@ rsync -a --delete --exclude .git "$GITHUB_WORKSPACE/forge/qfa-os/" .
 cd engine/bound-proof
 echo '{}' > /tmp/vres.json
 for v in verify_bound*.py; do
-  if python3 "$v" > "/tmp/${v}.log" 2>&1; then st=0; else st=$?; fi
+  if python3 "$v" > "$LOGDIR/${TS}_${v}.log" 2>&1; then st=0; else st=$?; fi
   python3 "$GITHUB_WORKSPACE/forge/scripts/collect_vres.py" "$v" "$st"
 done
 cd /tmp/qfaos
@@ -36,7 +41,6 @@ if [ "$created" = "true" ] || [ "$changed" = "true" ]; then
 fi
 tip=$(git rev-parse HEAD)
 cd "$GITHUB_WORKSPACE"
-TS=$(date -u +%Y%m%dT%H%M%SZ)
 python3 forge/scripts/make_receipt.py "$TS" "$MODE" "$created" "$changed" "$tip"
 git config user.name qfa-forge && git config user.email qfa-forge@local
 git add receipts/forge-qfos
