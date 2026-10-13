@@ -1,0 +1,22 @@
+{
+ "changed": true,
+ "created": false,
+ "engine_selftest": {
+  "verify_bound03.py": 0,
+  "verify_bound04.py": 0,
+  "verify_bound05.py": 0,
+  "verify_bound06.py": 0,
+  "verify_bound07.py": 0
+ },
+ "engine_selftest_pass": true,
+ "id": "FORGE-QFOS-01",
+ "mode": "sync",
+ "note": {
+  "bp": "BOUND-PROOF-07",
+  "note": "d=4 EA-RAC classical 5/8 EXACT + quantum LB 3/4 certified"
+ },
+ "private": true,
+ "repo": "chepin-qi/qfa-os",
+ "tip": "b729ae0a391c1adf60a7663571f6d40710866300",
+ "ts": "20261013T140513Z"
+}
