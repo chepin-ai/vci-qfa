@@ -1,0 +1,24 @@
+{
+ "asof": "2026-10-13T02:30:00Z",
+ "books_repo": "chepin-qi/qfa-quantum-lab",
+ "cap": {
+  "cap_hash": "bc57d637bc16af6d",
+  "id": "CAP-143",
+  "prev": "dfb8db999b4eab66"
+ },
+ "field": {
+  "hash": "e5f6f411ad974152",
+  "ver": 29
+ },
+ "forge": "vci-qfa forge-qfos-01",
+ "ledger": {
+  "items": 62,
+  "ver": "2.14"
+ },
+ "wm": {
+  "chain_len": 17,
+  "hash": "bba0110da5186e52",
+  "n": 265,
+  "prev": "e39efbdf4c6d26b7"
+ }
+}

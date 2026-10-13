@@ -1,0 +1,42 @@
+{
+ "beat": 126,
+ "by": "qfa",
+ "d4": {
+  "T3_eq_conj_T1": true,
+  "fourier_identity_dev": 1.67e-16,
+  "status": "decomposition verified; tight per-k bounds with POVM-sum constraint = DEBT-BOUND06-D4-01 (open); see-saw plateau NOT evidence (lesson 7)"
+ },
+ "debt_closure": [
+  "DEBT-BOUND05-UB-01 -> closed-proved"
+ ],
+ "id": "BOUND-PROOF-06",
+ "scope": "DEBT-BOUND05-UB-01 solved: self-contained upper bound Phi <= 4*sqrt(2); d=2 classical-message EA-RAC quantum value EXACT (2+sqrt2)/4; d=4 Fourier infrastructure",
+ "spectrum_d2_final": {
+  "r1": 0.75,
+  "r_ge2": 0.8535533905932737,
+  "status": "EXACT both bounds in-framework (modulo Tsirelson vector theorem borrow)"
+ },
+ "theorem_UB": {
+  "machine": {
+   "V4_attain": 5.656854249492,
+   "V5_bell_max": 5.656854249492,
+   "target_4sqrt2": 5.656854249492381
+  },
+  "proof_chain": [
+   "norm duality ||D||_1 = max_{-I<=Q<=I} tr(QD) [V1]",
+   "joint max = bipartite Bell functional sum (-1)^{x_y} <E_x^m x Q_y^m> [V3]",
+   "binary POVM substitution A=(I+Ah)/2, B=(Q0-Q1)/2; C-term and I-term vanish by balancedness [V2]",
+   "extreme points of Hermitian contraction ball = symmetries (separate linearity; Kadison, standard)",
+   "Tsirelson vector theorem (standard borrow): Bell value <= vector value",
+   "elementary vector maximization: sum_x ||(-1)^{x0}v0+(-1)^{x1}v1|| = 2||(v0+v1)||+2||(v0-v1)|| <= 4*sqrt(2), equality at v0 perp v1 [V4]"
+  ],
+  "statement": "max over valid F-decompositions of Phi(F) = 4*sqrt(2); hence S*_Q(2->1, classical message, arbitrary entanglement) <= (2+sqrt2)/4"
+ },
+ "ts": "2026-10-13T02:30:00Z",
+ "verifier": {
+  "checks": 6,
+  "exit": 0,
+  "failed": 0,
+  "file": "verify_bound06.py"
+ }
+}

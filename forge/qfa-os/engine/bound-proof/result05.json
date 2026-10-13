@@ -1,0 +1,79 @@
+{
+ "beat": 125,
+ "by": "qfa",
+ "d4_status": {
+  "r1": "0.625 exact gate PASS (BP-03)",
+  "r_ge2": "open; see-saw unreliable (proven at d=2); needs 4-outcome Bob SDP or analytic dual"
+ },
+ "debts": [
+  "DEBT-BOUND05-UB-01",
+  "DEBT-BOUND02-LEMMA-01 (reduction embedded via T1-T3; constant re-proof still open)"
+ ],
+ "errata": [
+  "ERRATA-BP04-01: BP-04 'r=8 trivially tight' corrected to open (formula value 1.0 trivial; tightness = perfect-protocol existence)"
+ ],
+ "gates": {
+  "C4_classical_d2_exhaustive": 0.75,
+  "C4_classical_d4_constructive": 0.625,
+  "C6_reduced_Phi": 5.656854249492379,
+  "C6_target_4sqrt2": 5.656854249492381
+ },
+ "id": "BOUND-PROOF-05",
+ "numerical_corroboration": {
+  "anneal_Phi_best_inscript": 5.105943,
+  "anneal_Phi_best_long": 5.621657897955368,
+  "note": "monotone approach from below; optimizer coarseness recorded honestly; plateau!=upper-bound lesson",
+  "target_4sqrt2": 5.656854249492381
+ },
+ "optimizer_lesson": "closed-form see-saw stuck at 0.75 plateau (local optimum); constructive steering search broke it (0.768, then 0.8514, exact 0.8535534 via affine CHSH strategy)",
+ "scope": "Schmidt-compression + steering-operator reduction; classical-message EA-RAC tightness spectrum (d=2 solved, d=4 open)",
+ "spectrum_d2": {
+  "r1": 0.75,
+  "r1_status": "proved tight (BP-03 embedding)",
+  "r_ge2": 0.8535533905932737,
+  "r_ge2_status": "lower proved, upper borrowed"
+ },
+ "theorems": {
+  "T1_schmidt_compression": {
+   "check": "C1",
+   "dev": 5.56e-17,
+   "status": "proved"
+  },
+  "T2_steering_reduction": {
+   "check": "C2",
+   "dev": 1.74e-16,
+   "status": "proved"
+  },
+  "T3_binary_helstrom_closure": {
+   "check": "C3",
+   "identity_dev_max": 1e-10,
+   "status": "proved"
+  },
+  "affine_CHSH_to_RAC": {
+   "note": "x_y = x0 XOR (x0 XOR x1)*y; value-preserving",
+   "status": "proved"
+  },
+  "r2_lower_bound": {
+   "check": "C5",
+   "dev": 5.6e-16,
+   "formula": "(2+sqrt(2))/4",
+   "status": "proved+machine",
+   "value": 0.8535533905932737
+  },
+  "r_ge2_upper_bound": {
+   "self_proof": "DEBT-BOUND05-UB-01 (open)",
+   "sources": [
+    "Pawlowski-Zukowski PRA 81 042326 (2010)",
+    "information-causality Nature 461 1101 (2009)"
+   ],
+   "status": "borrowed"
+  }
+ },
+ "ts": "2026-10-13T01:30:00Z",
+ "verifier": {
+  "checks": 7,
+  "exit": 0,
+  "failed": 0,
+  "file": "verify_bound05.py"
+ }
+}

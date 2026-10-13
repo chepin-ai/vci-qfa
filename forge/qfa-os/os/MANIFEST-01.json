@@ -1,0 +1,15 @@
+{
+ "account": "chepin-qi",
+ "components": {
+  "books": "books/heads.json",
+  "engine": "engine/bound-proof/ (BP-03..06)",
+  "ops": "ops/BEAT-LOG.md",
+  "si": "si/SI-STACK.md"
+ },
+ "id": "QFA-OS-MANIFEST-01",
+ "line": "qfa",
+ "privacy": "private (公域律)",
+ "ts": "2026-10-13T02:30:00Z",
+ "version": "1.0",
+ "write_law": "forge-qfos-01 single writer"
+}

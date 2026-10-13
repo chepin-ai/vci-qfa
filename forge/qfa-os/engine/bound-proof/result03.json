@@ -1,0 +1,31 @@
+{
+ "theorem": "classical (2->1, Z_N) RAC, one Z_N-dit message: S_max=(1+1/N)/2",
+ "exhaustive": {
+  "N=2": {
+   "S": 0.75,
+   "E": 16,
+   "D": 16
+  },
+  "N=3": {
+   "S": 0.6666666666666666,
+   "E": 19683,
+   "D": 729
+  }
+ },
+ "monte_carlo": {
+  "N=4": {
+   "mc_best_le": 20,
+   "proven_max": 20,
+   "pairs_sampled": 80000
+  },
+  "N=5": {
+   "mc_best_le": 30,
+   "proven_max": 30,
+   "pairs_sampled": 80000
+  }
+ },
+ "achievability": "f(x)=x1,g(m,y)=m attains N^2+N exact for all N",
+ "proof_sketch": "per-message fiber A_m as 0/1 matrix: max row+max col <= a_m+1 (intersection<=1); sum over N messages <= N^2+N; S<=(N^2+N)/(2N^2)",
+ "subsumes": "BP-01 (N=2) as corollary",
+ "ladder_note": "classical Z_4-dit 0.625 < separable-quantum Schmidt-1 0.6768 (BP-02): gap=shared classical correlation advantage"
+}
