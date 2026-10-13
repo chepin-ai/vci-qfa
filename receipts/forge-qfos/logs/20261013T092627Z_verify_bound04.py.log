@@ -1,0 +1,5 @@
+N=2 exact impl#2: 6 /8 = 0.75 OK
+N=3 exact impl#2: 12 /18 = 0.6666666666666666 OK
+ThA mixture MC: 120000 mixtures, 0 violations OK
+ThB: witness(r=1)=0.6767767 > tight=0.625, looseness=0.0517767 OK; r=8=1.0 OK
+ALL_ASSERTIONS_PASS

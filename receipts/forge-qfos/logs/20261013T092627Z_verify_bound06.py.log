@@ -1,0 +1,8 @@
+PASS V1 norm duality  | dev=4.44e-15
+PASS V2 balancedness C-term=0  | C-term=0.00e+00
+PASS V3 E/Q-to-contraction identity  | dev=1.11e-16
+PASS V4 vector max=4sqrt2  | rand_best=5.273265 attain=5.656854249492
+PASS V5 Bell max = 4sqrt2  | seed_max=5.656854249492
+PASS V6 d4 Fourier decomposition  | dev=1.67e-16
+
+6 checks, 0 failed
