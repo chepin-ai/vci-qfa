@@ -1,0 +1,7 @@
+Traceback (most recent call last):
+  File "/tmp/qfaos/engine/bound-proof/verify_bound09.py", line 7, in <module>
+    from test_twirl import build_W_1AB, build_RAC4_L1, build_RAC4_1AB, make_chars_Z4, make_chars_Z4cube
+  File "/tmp/qfaos/engine/bound-proof/test_twirl.py", line 5, in <module>
+    exec(open('/mnt/agents/output/bp09/npa_twirl.py').read())
+         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+FileNotFoundError: [Errno 2] No such file or directory: '/mnt/agents/output/bp09/npa_twirl.py'

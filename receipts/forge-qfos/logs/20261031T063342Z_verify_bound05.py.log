@@ -1,0 +1,9 @@
+PASS C1 schmidt-compression identity  | dev=5.55e-17
+PASS C2 steering realizability  | max_dev=1.14e-16
+PASS C3 helstrom closure S=1/2+Phi/16  | S=0.590895701
+PASS C4 classical gates  | d2=0.750000 d4_constructive=0.625000
+PASS C5 CHSH->RAC explicit strategy  | S=0.853553390593273 tgt=0.853553390593274
+PASS C6 reduced Phi=4sqrt2  | Phi=5.656854249492379
+PASS C7 anneal corroboration  | Phi_anneal=5.105943 (classical=4, tsirelson=4sqrt2=5.656854)
+
+7 checks, 0 failed
