@@ -1,0 +1,24 @@
+{
+ "changed": true,
+ "created": false,
+ "engine_selftest": {
+  "verify_bound03.py": 0,
+  "verify_bound04.py": 0,
+  "verify_bound05.py": 0,
+  "verify_bound06.py": 0,
+  "verify_bound07.py": 0,
+  "verify_bound08.py": 1
+ },
+ "engine_selftest_pass": false,
+ "id": "FORGE-QFOS-01",
+ "mode": "sync",
+ "note": {
+  "beat": 129,
+  "id": "BOUND-PROOF-08",
+  "summary": "d=4 EA-RAC quantum UB=(2+3sqrt2)/8 certified (NPA L1); W adjudicated: bp07 stands; W 1AB UB=0.7441360147"
+ },
+ "private": true,
+ "repo": "chepin-qi/qfa-os",
+ "tip": "fb63a52a1dd9609a863bb6309b8bd185af3f4ebf",
+ "ts": "20261031T031353Z"
+}
