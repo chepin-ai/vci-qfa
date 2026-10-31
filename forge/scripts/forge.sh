@@ -6,6 +6,7 @@ LOGDIR="$GITHUB_WORKSPACE/receipts/forge-qfos/logs"
 mkdir -p "$LOGDIR"
 # ERRATA-PROCESS-03: runner python3 is bare; engine verifiers need numpy. Conditional install.
 python3 -c 'import numpy' 2>/dev/null || python3 -m pip install --quiet numpy
+python3 -c 'import scipy' 2>/dev/null || python3 -m pip install --quiet scipy
 code=$(curl -s -o /dev/null -w '%{http_code}' -H "Authorization: token $QI" "https://api.github.com/repos/$REPO")
 created=false
 if [ "$code" = "404" ]; then
