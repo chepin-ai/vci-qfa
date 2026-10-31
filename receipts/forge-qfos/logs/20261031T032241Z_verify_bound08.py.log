@@ -1,0 +1,14 @@
+PASS namespace-rac2 letters=17
+PASS namespace-rac4 letters=97
+PASS namespace-w letters=25
+PASS d2-L1-exact cert=0.8535533906 exact=0.8535533906
+PASS d4-L1-UB cert=0.7803300859 target=0.7803300859 lam=-1.5e-14 pres=7.9e-14
+PASS d4-L1-above-LB UB must dominate quantum LB 3/4
+PASS W-L1-UB cert=0.7803300859
+PASS W-L1-above-seesaw see-saw LB 0.7404886669 (bp07, reproduced twice)
+PASS classical-rac4-feasible res=0.0e+00 obj=0.625000000000 (5/8)
+PASS classical-W-feasible res=0.0e+00 obj=0.625000000000
+PASS classical-W-1AB-feasible res=0.0e+00 obj=0.625000000000
+PASS W-1AB-valid-UB cert=0.8207097077 iters=500
+
+BOUND-PROOF-08 quick mode: ALL PASS
