@@ -1,8 +1,8 @@
 # bp09/test_twirl.py -- validation ladder for the twirl engine
 # Ladder: W-L1 twirled == 0.7803300859 ; RAC4-L1 twirled == 0.7803300859 (both certified untwirled in beat-129)
-import numpy as np, sys
-sys.path.insert(0,'/mnt/agents/output/bp09')
-exec(open('/mnt/agents/output/bp09/npa_twirl.py').read())
+import numpy as np, sys, os
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from npa_twirl import TwirlNPA
 
 def build_W_1AB():  # W game, 1+AB basis (153 words): target = beat-129 certified W-1AB UB
     A=[('A',u,a) for u in range(4) for a in range(4)]
