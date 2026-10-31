@@ -1,0 +1,6 @@
+[PASS] W-1AB-twirl-vs-BP08 obj=0.7441202902 cert=0.7441352513 pres=4.0e-09
+[PASS] RAC4-L1-twirl-eq-BP08 obj=0.7803301265 cert=0.7803608143 struct=True
+[PASS] RAC4-1AB-structure G=64 orbits=36 z=28439 blocks=36 sumtr(F0)=1.000000
+[PASS] RAC4-1AB-witness-cert cert=0.7537703608 dualobj=0.7499321113 pen=3.9e-13 rnorm=3.84e-03
+[PASS] classical-5/8-feasible min block eig=-8.13e-15 obj_classical=0.625000000000
+BP-09 verify (quick): 5 checks, 0 fail

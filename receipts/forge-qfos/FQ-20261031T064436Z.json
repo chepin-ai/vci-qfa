@@ -1,0 +1,26 @@
+{
+ "changed": true,
+ "created": false,
+ "engine_selftest": {
+  "verify_bound03.py": 0,
+  "verify_bound04.py": 0,
+  "verify_bound05.py": 0,
+  "verify_bound06.py": 0,
+  "verify_bound07.py": 0,
+  "verify_bound08.py": 0,
+  "verify_bound09.py": 0
+ },
+ "engine_selftest_pass": true,
+ "id": "FORGE-QFOS-01",
+ "mode": "sync",
+ "note": {
+  "beat": 130,
+  "id": "BP-09",
+  "note": "re-forge after portable-import fix in test_twirl.py",
+  "ub": 0.7537703608
+ },
+ "private": true,
+ "repo": "chepin-qi/qfa-os",
+ "tip": "49716a5d75bcadcaba9838669d4b9b1908373369",
+ "ts": "20261031T064436Z"
+}

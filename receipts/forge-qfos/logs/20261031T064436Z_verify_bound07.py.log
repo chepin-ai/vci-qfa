@@ -1,0 +1,12 @@
+PASS classical-LB-certificate win-sum=20 -> S>=20/32=5/8
+PASS classical-UB-exact max win-sum over all deterministic strategies = 20 -> S<=5/8
+PASS classical-exact-5/8 S_classical(d=4 EA-RAC) = 5/8 EXACT
+PASS O-operator-identity R_X = 4 M_X - I (T-split is definitionally exact)
+PASS quantum-LB-3/4 S = 0.750000000000000 (max-ent state, projective POVMs)
+PASS uniform-win P(win|x,y)=3/4 forall (x,y), dev=5.55e-16
+PASS T-structure T0=32, T1=T2=T3=64/3 -> S=1/4+(2*64/3+64/3)/128=3/4
+PASS ququart-advantage ((2+sqrt2)/4)^2 = 0.728553391 < 3/4
+PASS affine-W-classical max wins=5 -> W_classical=5/8 (|U0|+|U1|<=5)
+
+verify_bound07: 10 checks, 0 failed
+STATUS: classical=5/8 EXACT; quantum>=3/4 certified; quantum<=3/4 CONJECTURE (numeric, unproven)
