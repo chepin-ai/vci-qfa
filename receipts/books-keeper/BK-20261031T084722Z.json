@@ -1,0 +1,59 @@
+{
+ "id": "BOOKS-KEEPER-01",
+ "ts": "20261031T084722Z",
+ "mode": "append",
+ "clock": "VOID",
+ "clone_rc": 0,
+ "layout": {
+  "outbox_cand": [
+   "docs/qfa-outbox-20260826.json",
+   "outbox/qfa-outbox.json"
+  ],
+  "wm_cand": [
+   "results/rm-exp/rm_oq_03_diag_chain.json",
+   "ure/chain.jsonl"
+  ],
+  "cap_cand": [
+   "capsule/CAP-064.json",
+   "capsule/CAP-107.json",
+   "capsule/CAP-144.json",
+   "capsule/CAP-123.json",
+   "capsule/CAP-078.json",
+   "capsule/CAP-139.json",
+   "capsule/CAP-027.json",
+   "capsule/CAP-065.json",
+   "capsule/CAP-036.json",
+   "capsule/CAP-130.json"
+  ]
+ },
+ "cap_latest": {
+  "n": 146,
+  "file": "capsule/CAP-146.json",
+  "cap_hash": "4654d697fb2a0117",
+  "prev_cap_hash": "62839408e4587d5e"
+ },
+ "tails": {
+  "results/rm-exp/rm_oq_03_diag_chain.json": "unparsed: Expecting value: line 1 column 1 (char 0)",
+  "ure/chain.jsonl": {
+   "hash": "c2d4fc707dd1caa81fe7caf1584c80e169e315fd37879f823bf33b09457b126d",
+   "seq": 22
+  },
+  "docs/qfa-outbox-20260826.json": "unparsed: Expecting value: line 1 column 1 (char 0)",
+  "outbox/qfa-outbox.json": "unparsed: Expecting value: line 1 column 1 (char 0)"
+ },
+ "cap_new": {
+  "id": "CAP-147",
+  "digest": "1ca8632015615507",
+  "cap_hash": "41340935e79daf50",
+  "prev": "4654d697fb2a0117"
+ },
+ "wm_new": "NOT-FOUND(名级:未发现wm面,诚实录)",
+ "outbox_new": {
+  "seq": 339,
+  "sha256": "fbd8d3575a412829…"
+ },
+ "commit": " create mode 100644 capsule/CAP-147.json\n",
+ "push_rc": 0,
+ "push_tail": "   014c2ab..a3c9308  HEAD -> main\n",
+ "verdict": "appended"
+}
