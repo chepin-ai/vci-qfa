@@ -1,0 +1,43 @@
+{
+  "output": "/mnt/agents/output/.scratch/beat174-qfa-package-02/portable-replay-result.json",
+  "sha256": "6711f49b1cbb9913e15a5a3cb22c415e7d682a508141738a4ecc62a85a5ec780",
+  "verdict": "PASS_BEAT174_QUOTIENT_NUMERIC_UB_0_752718187871213__EXACT_3_OVER_4_NOT_PROVEN",
+  "new_cert": 0.752718187871213,
+  "improvement": 6.767335362678484e-05,
+  "scientific": {
+    "stored_Q_exact": true,
+    "stored_E_exact": true,
+    "stored_e0_exact": true,
+    "S_quotient_exact": true,
+    "objective_quotient_exact": true,
+    "F0_exact": true,
+    "legacy_equalities_independent_exact": true,
+    "equality_normalized_row_bijection": true,
+    "equality_normalized_constants_match": true,
+    "raw_counts_51480": true,
+    "old_anchor_exact": true,
+    "transfer_projection_exact": true,
+    "transfer_claim_match": true,
+    "new_claim_match": true,
+    "new_bound_strictly_improves": true,
+    "new_bound_above_quantum_lb": true,
+    "classical_control": true,
+    "quantum_control": true,
+    "moments_real": true,
+    "witness_nu_replay_match": true,
+    "independent_lp_optimal": true,
+    "independent_lp_same_certificate": true
+  },
+  "negative": {
+    "completeness_violation_detected": true,
+    "nonpsd_detected": true,
+    "residual_removal_below_known_lb": true,
+    "zero_multiplier_is_worse": true,
+    "wrong_multiplier_sign_changes_certificate": true,
+    "quotient_column_swap_detected": true,
+    "objective_binding_swap_detected": true,
+    "witness_mutation_detected": true,
+    "quick_full_mislabel_rejected": true,
+    "exact_three_quarters_not_claimed": true
+  }
+}

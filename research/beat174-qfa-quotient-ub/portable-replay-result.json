@@ -1,0 +1,127 @@
+{
+  "boundary": "Independent floating-point certificate and LP replay only. No exact BP07, canonical-full convergence, QRAC/EARAC equivalence, novelty, real-QPU or seat-consensus claim.",
+  "engineering_guards": {
+    "claim_schema_ok": true,
+    "qpu_launches_zero": true,
+    "remote_writes": true
+  },
+  "inputs_sha256": {
+    "canonical_npa": "daea2ee036bbbeb3e7e8e6668fecf3a46b3f86e7c1adabc1be43a3f1f87cffa8",
+    "claim": "64169591b3d1e55c579a252d9cdf2b035bd99e52a684ecb2f34f4db2b51171f2",
+    "npa_twirl": "bd66b9d16025604baf5e9cfbbe7f12b187b850990e15b3547adc298cb028dd3f",
+    "old_witness": "9ff8b2728f7bd48b6cd45d4adb80fba9624d890179363203d36c672522bf4a7f",
+    "quantum_control": "8ecaee0506da69bcd2c2bb46c1e8568878c4fd6a3ba24f410a3f2010b582c53f",
+    "system": "c3d70b75002cc363d6cccd178efd8b09bf8de61a7ed44a50267e14406b5c6b09",
+    "test_twirl": "5448b43d31c135f744f66b550d0b76c17954f86582bb0ebf9887ca4ed6740b5c",
+    "witness": "672fcac210d7ab3384cbab95749a782209980f62a824158967e0402f0b899715"
+  },
+  "negative_controls": {
+    "completeness_violation_detected": true,
+    "exact_three_quarters_not_claimed": true,
+    "nonpsd_detected": true,
+    "objective_binding_swap_detected": true,
+    "quick_full_mislabel_rejected": true,
+    "quotient_column_swap_detected": true,
+    "residual_removal_below_known_lb": true,
+    "witness_mutation_detected": true,
+    "wrong_multiplier_sign_changes_certificate": true,
+    "zero_multiplier_is_worse": true
+  },
+  "positive_controls": {
+    "classical_completeness_linf": 0.0,
+    "classical_objective": 0.625,
+    "quantum_completeness_linf": 1.3877787807814457e-16,
+    "quantum_objective": 0.75
+  },
+  "qpu_launches": 0,
+  "recomputed": {
+    "improvement_over_beat173": 6.767335362678484e-05,
+    "independent_lp": {
+      "base_dualobj": 0.7499321113469367,
+      "cert": 0.752718187871213,
+      "dualobj": 0.7499583863315665,
+      "equality_dualobj": 2.6274984629868294e-05,
+      "min_psd_eigenvalue": -3.284489683125016e-17,
+      "psd_penalty": 4.361831694010912e-13,
+      "residual_l1": 0.00275980153921033,
+      "residual_l2": 0.00010472936666187307,
+      "residual_linf": 7.003650583466619e-05
+    },
+    "new": {
+      "base_dualobj": 0.7499321113469367,
+      "cert": 0.752718187871213,
+      "dualobj": 0.7499583863315665,
+      "equality_dualobj": 2.6274984629868294e-05,
+      "min_psd_eigenvalue": -3.284489683125016e-17,
+      "psd_penalty": 4.361831694010912e-13,
+      "residual_l1": 0.00275980153921033,
+      "residual_l2": 0.00010472936666187307,
+      "residual_linf": 7.003650583466619e-05
+    },
+    "old_beat173": {
+      "base_dualobj": 0.7499321113469367,
+      "cert": 0.7527858612248398,
+      "dualobj": 0.7499583863315665,
+      "equality_dualobj": 2.6274984629868294e-05,
+      "min_psd_eigenvalue": -3.284489683125016e-17,
+      "psd_penalty": 4.361831694010912e-13,
+      "residual_l1": 0.0028274748928370516,
+      "residual_l2": 0.00010278191713774864,
+      "residual_linf": 7.003650583466619e-05
+    },
+    "projection_error_linf": 1.0234868508263162e-16,
+    "transferred": {
+      "base_dualobj": 0.7499321113469367,
+      "cert": 0.752718187871213,
+      "dualobj": 0.7499583863315665,
+      "equality_dualobj": 2.6274984629868294e-05,
+      "min_psd_eigenvalue": -3.284489683125016e-17,
+      "psd_penalty": 4.361831694010912e-13,
+      "residual_l1": 0.00275980153921033,
+      "residual_l2": 0.00010472936666187307,
+      "residual_linf": 7.003650583466619e-05
+    }
+  },
+  "remote_writes": 0,
+  "schema": "BEAT174-QFA-QUOTIENT-UB-INDEPENDENT-REPLAY-03",
+  "scientific_guards": {
+    "F0_exact": true,
+    "S_quotient_exact": true,
+    "classical_control": true,
+    "equality_normalized_constants_match": true,
+    "equality_normalized_row_bijection": true,
+    "independent_lp_optimal": true,
+    "independent_lp_same_certificate": true,
+    "legacy_equalities_independent_exact": true,
+    "moments_real": true,
+    "new_bound_above_quantum_lb": true,
+    "new_bound_strictly_improves": true,
+    "new_claim_match": true,
+    "objective_quotient_exact": true,
+    "old_anchor_exact": true,
+    "quantum_control": true,
+    "raw_counts_51480": true,
+    "stored_E_exact": true,
+    "stored_Q_exact": true,
+    "stored_e0_exact": true,
+    "transfer_claim_match": true,
+    "transfer_projection_exact": true,
+    "witness_nu_replay_match": true
+  },
+  "structure": {
+    "E_nnz": 3679,
+    "Q_nnz": 28438,
+    "blocks": 36,
+    "canonical_variables": 15070,
+    "equalities": 745,
+    "legacy_variables": 28438,
+    "lp_constraints": 30140,
+    "lp_nit": 3607,
+    "lp_status": 0,
+    "lp_variables": 15815,
+    "raw_equalities": 51480
+  },
+  "ts": "2026-11-21T11:13:31.222026Z",
+  "verdict": "PASS_BEAT174_QUOTIENT_NUMERIC_UB_0_752718187871213__EXACT_3_OVER_4_NOT_PROVEN",
+  "verifier_source_sha256": "c27025906ae55dff738b9f79f843ee2cf2479ea011c5c503bd5a557246eb67b1"
+}

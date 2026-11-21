@@ -1,0 +1,143 @@
+{
+  "acceptance_status": "PASS_NUMERIC_EVIDENCE_AND_INDEPENDENT_REPLAY__EXACT_OBJECTIVE_NOT_CLOSED",
+  "answer_path": "outbox/ANS-BEAT174-LINEAGE-COLLAB-01-qfa.json",
+  "evidence": {
+    "exact_commands": [
+      {
+        "command": [
+          "python3",
+          "-B",
+          "inputs/beat172/verify_bound07.py"
+        ],
+        "cwd": "research/beat174-qfa-quotient-ub",
+        "exit_file": "portable-bound07.rc",
+        "process_exit": 0,
+        "stdout_log": "portable-bound07.log"
+      },
+      {
+        "command": [
+          "python3",
+          "-B",
+          "portable_verify.py"
+        ],
+        "cwd": "research/beat174-qfa-quotient-ub",
+        "exit_file": "portable-verify.rc",
+        "process_exit": 0,
+        "result": "portable-replay-result.json",
+        "stdout_log": "portable-verify.log"
+      }
+    ],
+    "independent_replay_verdict": "PASS_BEAT174_QUOTIENT_NUMERIC_UB_0_752718187871213__EXACT_3_OVER_4_NOT_PROVEN",
+    "manifest_file_count": 16,
+    "manifest_sha256": "d13a6092a776254034d1a89b1333275f131ade29cdb6aec2287d91aa29ce34d4",
+    "negative_controls": {
+      "completeness_violation_detected": true,
+      "exact_three_quarters_not_claimed": true,
+      "nonpsd_detected": true,
+      "objective_binding_swap_detected": true,
+      "quick_full_mislabel_rejected": true,
+      "quotient_column_swap_detected": true,
+      "residual_removal_below_known_lb": true,
+      "witness_mutation_detected": true,
+      "wrong_multiplier_sign_changes_certificate": true,
+      "zero_multiplier_is_worse": true
+    },
+    "package_hygiene": {
+      "bytecode_disabled_for_fresh_commands": true,
+      "cache_files": 0,
+      "fresh_outputs_started_absent": [
+        "portable-bound07.log",
+        "portable-bound07.rc",
+        "portable-replay-result.json",
+        "portable-verify.log",
+        "portable-verify.rc"
+      ],
+      "portable_verifier_uses_package_relative_inputs": true
+    },
+    "package_path": "research/beat174-qfa-quotient-ub",
+    "portable_replay_sha256": "6711f49b1cbb9913e15a5a3cb22c415e7d682a508141738a4ecc62a85a5ec780",
+    "portable_run_receipt_sha256": "f9d55a9385c8f1d5282c5e532d763faeafbb3753cb2d0f358106e3887ca0c1b0",
+    "positive_controls": {
+      "classical_5_8": true,
+      "quantum_lower_bound_0_75_fresh_process": true,
+      "scientific_guards": {
+        "F0_exact": true,
+        "S_quotient_exact": true,
+        "classical_control": true,
+        "equality_normalized_constants_match": true,
+        "equality_normalized_row_bijection": true,
+        "independent_lp_optimal": true,
+        "independent_lp_same_certificate": true,
+        "legacy_equalities_independent_exact": true,
+        "moments_real": true,
+        "new_bound_above_quantum_lb": true,
+        "new_bound_strictly_improves": true,
+        "new_claim_match": true,
+        "objective_quotient_exact": true,
+        "old_anchor_exact": true,
+        "quantum_control": true,
+        "raw_counts_51480": true,
+        "stored_E_exact": true,
+        "stored_Q_exact": true,
+        "stored_e0_exact": true,
+        "transfer_claim_match": true,
+        "transfer_projection_exact": true,
+        "witness_nu_replay_match": true
+      }
+    }
+  },
+  "failed_package_generation_01": {
+    "reason": "Guard-count typo only; fresh scientific replay was green.",
+    "run_receipt_sha256": "d1687858f4c76e87ffbf8c957cb76f11c8df89bdc061c46d225c5a65856a3525"
+  },
+  "generation": 2,
+  "lane": "qfa",
+  "machine_answer": true,
+  "method": {
+    "blocks": 36,
+    "canonical_variables": 15070,
+    "legacy_variables": 28438,
+    "lp_iterations": 3607,
+    "lp_status": "HiGHS optimal",
+    "lp_strictly_improved_transferred_witness": false,
+    "new_admm_iterations": 0,
+    "quotient_nnz": 28438,
+    "raw_completeness_equalities": 51480,
+    "unique_completeness_equalities": 745
+  },
+  "open_items": [
+    "Exact full d=4 EARAC quantum<=3/4 remains CONJECTURE, not proven.",
+    "No claim that quantum value is exactly 3/4.",
+    "NPA/EARAC model equivalence and external novelty remain OPEN.",
+    "Canonical full run and convergence remain OPEN; no new ADMM run is relabelled as full.",
+    "Further joint Y/nu optimization remains OPEN; this certificate fixes Y.",
+    "Machine answer is not seat approval; no real-QPU launch occurred."
+  ],
+  "public_safe": true,
+  "schema": "BEAT174-QFA-SUBSTANTIVE-PARTIAL-ANSWER-02",
+  "scientific_result": {
+    "classical": "5/8 EXACT",
+    "dualobj": 0.7499583863315665,
+    "improvement": 6.767335362678484e-05,
+    "model_boundary": "Exact sparse linear quotient from the frozen legacy 1+AB twirled NPA variables to canonical variables, fixed-Y dual transfer and L1 replay; floating-point certificate only.",
+    "new_numeric_upper_bound": 0.752718187871213,
+    "old_numeric_upper_bound": 0.7527858612248398,
+    "psd_penalty": 4.361831694010912e-13,
+    "quantum_lower_bound": ">=3/4 certified construction",
+    "residual_l1": 0.00275980153921033
+  },
+  "seat_answer": false,
+  "self_publication": {
+    "answer_commit": null,
+    "status": "EXTERNAL_FIXED_COMMIT_AND_REMOTE_REPLAY_REQUIRED"
+  },
+  "source_task_commit": "32907e42bb9d7e5be5555eab8665eb4a13714a06",
+  "source_task_file": "inbox/TASK-BEAT173-LINEAGE-COLLAB-01-qfa-20261121.md",
+  "supersedes_beats173_answer": {
+    "answer_sha256": "44dd01fde1440a6a84273e24ac7e7345d3dd10bd018247e723d95dab52f0d4d5",
+    "reason": "Exact legacy-to-canonical quotient transfer reduces the floating-point upper bound."
+  },
+  "task": "T-B173-QFA-01",
+  "ts": "2026-11-21T11:13:31.854433Z",
+  "verdict": "PARTIAL_SUBSTANTIVE_NUMERIC_UB_IMPROVEMENT__EXACT_BP07_TARGET_OPEN"
+}

@@ -1,0 +1,128 @@
+{
+  "anchors": {
+    "beat173_expected": 0.7527858612248398,
+    "beat173_recomputed": 0.7527858612248398,
+    "canonical_dualobj": 0.7499321113469367,
+    "canonical_psd_penalty": 4.361831694010912e-13,
+    "legacy_dualobj": 0.7499321113469367,
+    "legacy_psd_penalty": 4.361831694010912e-13
+  },
+  "artifacts": {
+    "quotient_system": "rac4-quotient-system-05.npz",
+    "quotient_system_sha256": "c3d70b75002cc363d6cccd178efd8b09bf8de61a7ed44a50267e14406b5c6b09",
+    "witness": "rac4-quotient-transfer-l1-05.npz",
+    "witness_sha256": "672fcac210d7ab3384cbab95749a782209980f62a824158967e0402f0b899715"
+  },
+  "boundary": "Exact sparse linear-quotient checks plus floating-point dual certificates. No exact 3/4 theorem, full-run claim, model-equivalence proof, novelty claim, QPU result or seat approval.",
+  "ended_utc": "2026-11-21T11:03:18.078765Z",
+  "equality": {
+    "canonical_shape": [
+      745,
+      15070
+    ],
+    "legacy_e0_max_abs_diff": 0.0,
+    "legacy_stored_vs_independent_max": 0.0,
+    "lift_shape": [
+      745,
+      15070
+    ],
+    "lifted_e0_vs_canonical_permuted_max": 0.0,
+    "raw_canonical": 51480,
+    "raw_legacy": 51480,
+    "row_bijection": true
+  },
+  "guards": {
+    "improves_beat173_upper_bound_1e-10": true,
+    "improves_transferred_certificate_1e-10": false,
+    "lp_not_worse_than_transferred_witness_1e-8": true,
+    "lp_optimal": true,
+    "not_below_known_quantum_lb_1e-7": true
+  },
+  "inputs_sha256": {
+    "canonical_npa": "daea2ee036bbbeb3e7e8e6668fecf3a46b3f86e7c1adabc1be43a3f1f87cffa8",
+    "generation03_helper": "186148b22ce1feff462e4040cf134959ce7bd1512b2dab67b4ed8856cad81cee",
+    "npa_twirl": "bd66b9d16025604baf5e9cfbbe7f12b187b850990e15b3547adc298cb028dd3f",
+    "old_claim": "3939fadc000b19e8caaf4157d4c1f69f4313fd94b092c90e8e0abb49ecd32546",
+    "old_equalities": "67a76bb877d37f0687628d1bed69174f637258d533da01bf72c9763841dfa446",
+    "old_witness": "9ff8b2728f7bd48b6cd45d4adb80fba9624d890179363203d36c672522bf4a7f",
+    "quantum_control": "8ecaee0506da69bcd2c2bb46c1e8568878c4fd6a3ba24f410a3f2010b582c53f",
+    "test_twirl": "5448b43d31c135f744f66b550d0b76c17954f86582bb0ebf9887ca4ed6740b5c"
+  },
+  "mode_lineage": {
+    "new_admm_iterations": 0,
+    "not_full": true,
+    "source_mode": "BEAT173 fixed-Y polish plus canonical quick checkpoint lineage"
+  },
+  "new_certificate": {
+    "base_dualobj": 0.7499321113469367,
+    "cert": 0.752718187871213,
+    "dualobj": 0.7499583863315665,
+    "equality_dualobj": 2.6274984629868294e-05,
+    "min_psd_eigenvalue": -3.284489683125016e-17,
+    "psd_penalty": 4.361831694010912e-13,
+    "residual_l1": 0.00275980153921033,
+    "residual_l2": 0.00010472936666187307,
+    "residual_linf": 7.003650583466619e-05
+  },
+  "optimization": {
+    "constraints": 30140,
+    "matrix_nnz": 37498,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "nit": 3607,
+    "objective_without_constant": 0.0027860392607736697,
+    "solver": "scipy.optimize.linprog/HiGHS",
+    "status": 0,
+    "variables": 15815
+  },
+  "positive_controls": {
+    "block_dimensions_match": true,
+    "canonical_equality_e0_match": true,
+    "canonical_equality_row_bijection": true,
+    "classical_completeness_linf": 0.0,
+    "classical_completeness_zero": true,
+    "classical_objective": 0.625,
+    "classical_objective_5_over_8": true,
+    "dual_block_transfer_match_1e-11": true,
+    "legacy_equality_replica_exact": true,
+    "no_nonidentity_maps_to_identity": true,
+    "old_beat173_certificate_anchor_5e-12": true,
+    "quantum_completeness_linf": 1.3877787807814457e-16,
+    "quantum_completeness_zero": true,
+    "quantum_objective": 0.75,
+    "quantum_objective_3_over_4": true,
+    "quotient_F0_exact_1e-11": true,
+    "quotient_blocks_exact_1e-11": true,
+    "quotient_objective_exact_1e-11": true,
+    "raw_completeness_counts_51480": true,
+    "residual_projection_exact_1e-9": true,
+    "strategy_moments_real": true,
+    "transferred_l1_not_worse_1e-9": true
+  },
+  "quotient": {
+    "F0_max_abs_diff": 0.0,
+    "S_quotient_max_abs_diff": 0.0,
+    "block_count_match": true,
+    "block_sizes_match": true,
+    "canonical_variables": 15070,
+    "identity_maps_to_identity": true,
+    "legacy_variables": 28438,
+    "mapped_identity_nonidentity_legacy": [],
+    "objective_max_abs_diff": 0.0
+  },
+  "schema": "BEAT174-QFA-LEGACY-CANONICAL-QUOTIENT-TRANSFER-L1-05",
+  "source_sha256": "395ef739c07ea32a0d9e8cdd9e2f6ba4bdee09741ec9b1354d2978fb8838d455",
+  "started_utc": "2026-11-21T11:02:53.502534Z",
+  "transferred_certificate_before_new_lp": {
+    "base_dualobj": 0.7499321113469367,
+    "cert": 0.752718187871213,
+    "dualobj": 0.7499583863315665,
+    "equality_dualobj": 2.6274984629868294e-05,
+    "projection_error_linf": 1.0234868508263162e-16,
+    "psd_penalty": 4.361831694010912e-13,
+    "residual_l1": 0.00275980153921033,
+    "residual_l2": 0.00010472936666187307,
+    "residual_linf": 7.003650583466619e-05
+  },
+  "verdict": "PASS_QUOTIENT_TRANSFER_L1_NUMERIC_UB_IMPROVES_BEAT173__INDEPENDENT_REPLAY_REQUIRED",
+  "wall_seconds": 24.576215982437134
+}

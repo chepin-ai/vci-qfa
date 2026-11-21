@@ -1,0 +1,179 @@
+{
+  "boundary": "Floating-point canonical-quotient dual certificate only; exact BP07, full convergence, model equivalence, novelty, QPU and seat approval remain open.",
+  "exact_commands": [
+    {
+      "command": [
+        "python3",
+        "-B",
+        "inputs/beat172/verify_bound07.py"
+      ],
+      "cwd": "research/beat174-qfa-quotient-ub",
+      "exit_file": "portable-bound07.rc",
+      "process_exit": 0,
+      "stdout_log": "portable-bound07.log"
+    },
+    {
+      "command": [
+        "python3",
+        "-B",
+        "portable_verify.py"
+      ],
+      "cwd": "research/beat174-qfa-quotient-ub",
+      "exit_file": "portable-verify.rc",
+      "process_exit": 0,
+      "result": "portable-replay-result.json",
+      "stdout_log": "portable-verify.log"
+    }
+  ],
+  "failed_generation_01": {
+    "failed_generation_retained": true,
+    "reason": "Harness expected 21 scientific guards; the fixed verifier has 22 and all passed.",
+    "run_receipt_sha256": "d1687858f4c76e87ffbf8c957cb76f11c8df89bdc061c46d225c5a65856a3525"
+  },
+  "file_count": 16,
+  "files": [
+    {
+      "bytes": 650,
+      "path": "README.md",
+      "sha256": "a51c73dfff954bc0042e200ec7dd4f720ff082a817b0ffc8078a9cd4d17de64b"
+    },
+    {
+      "bytes": 16309,
+      "path": "inputs/beat172/npa_twirl.py",
+      "sha256": "bd66b9d16025604baf5e9cfbbe7f12b187b850990e15b3547adc298cb028dd3f"
+    },
+    {
+      "bytes": 4197,
+      "path": "inputs/beat172/test_twirl.py",
+      "sha256": "5448b43d31c135f744f66b550d0b76c17954f86582bb0ebf9887ca4ed6740b5c"
+    },
+    {
+      "bytes": 15214,
+      "path": "inputs/beat172/verify_bound07.py",
+      "sha256": "8ecaee0506da69bcd2c2bb46c1e8568878c4fd6a3ba24f410a3f2010b582c53f"
+    },
+    {
+      "bytes": 1393,
+      "path": "inputs/beat173/canonical_npa.py",
+      "sha256": "daea2ee036bbbeb3e7e8e6668fecf3a46b3f86e7c1adabc1be43a3f1f87cffa8"
+    },
+    {
+      "bytes": 107536,
+      "path": "inputs/beat173/rac4-completeness-equalities-01.npz",
+      "sha256": "67a76bb877d37f0687628d1bed69174f637258d533da01bf72c9763841dfa446"
+    },
+    {
+      "bytes": 1113388,
+      "path": "inputs/beat173/rac4-completeness-polish-l1-02.npz",
+      "sha256": "9ff8b2728f7bd48b6cd45d4adb80fba9624d890179363203d36c672522bf4a7f"
+    },
+    {
+      "bytes": 744,
+      "path": "portable-bound07.log",
+      "sha256": "4c4fd8b750ba97b8c922785e236afe5f96a54d9f364baa47a8a0102a3e29cbe6"
+    },
+    {
+      "bytes": 2,
+      "path": "portable-bound07.rc",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "bytes": 4882,
+      "path": "portable-replay-result.json",
+      "sha256": "6711f49b1cbb9913e15a5a3cb22c415e7d682a508141738a4ecc62a85a5ec780"
+    },
+    {
+      "bytes": 1580,
+      "path": "portable-verify.log",
+      "sha256": "6a3781d58a602c1ebb4a21db1b77e439f457588cc7d83e23e6a31d6d58697def"
+    },
+    {
+      "bytes": 2,
+      "path": "portable-verify.rc",
+      "sha256": "9a271f2a916b0b6ee6cecb2426f0b3206ef074578be55d9bc94f6f3fe3ab86aa"
+    },
+    {
+      "bytes": 16209,
+      "path": "portable_verify.py",
+      "sha256": "c27025906ae55dff738b9f79f843ee2cf2479ea011c5c503bd5a557246eb67b1"
+    },
+    {
+      "bytes": 516584,
+      "path": "rac4-quotient-system-05.npz",
+      "sha256": "c3d70b75002cc363d6cccd178efd8b09bf8de61a7ed44a50267e14406b5c6b09"
+    },
+    {
+      "bytes": 5090,
+      "path": "rac4-quotient-transfer-l1-05.json",
+      "sha256": "64169591b3d1e55c579a252d9cdf2b035bd99e52a684ecb2f34f4db2b51171f2"
+    },
+    {
+      "bytes": 1026516,
+      "path": "rac4-quotient-transfer-l1-05.npz",
+      "sha256": "672fcac210d7ab3384cbab95749a782209980f62a824158967e0402f0b899715"
+    }
+  ],
+  "fresh_run_receipt_sha256": "f9d55a9385c8f1d5282c5e532d763faeafbb3753cb2d0f358106e3887ca0c1b0",
+  "generated_utc": "2026-11-21T11:13:31.827770Z",
+  "improvement_over_beat173": 6.767335362678484e-05,
+  "negative_controls": {
+    "completeness_violation_detected": true,
+    "exact_three_quarters_not_claimed": true,
+    "nonpsd_detected": true,
+    "objective_binding_swap_detected": true,
+    "quick_full_mislabel_rejected": true,
+    "quotient_column_swap_detected": true,
+    "residual_removal_below_known_lb": true,
+    "witness_mutation_detected": true,
+    "wrong_multiplier_sign_changes_certificate": true,
+    "zero_multiplier_is_worse": true
+  },
+  "numeric_result": {
+    "base_dualobj": 0.7499321113469367,
+    "cert": 0.752718187871213,
+    "dualobj": 0.7499583863315665,
+    "equality_dualobj": 2.6274984629868294e-05,
+    "min_psd_eigenvalue": -3.284489683125016e-17,
+    "psd_penalty": 4.361831694010912e-13,
+    "residual_l1": 0.00275980153921033,
+    "residual_l2": 0.00010472936666187307,
+    "residual_linf": 7.003650583466619e-05
+  },
+  "package_hygiene": {
+    "bytecode_disabled_for_fresh_commands": true,
+    "cache_files": 0,
+    "fresh_outputs_started_absent": [
+      "portable-bound07.log",
+      "portable-bound07.rc",
+      "portable-replay-result.json",
+      "portable-verify.log",
+      "portable-verify.rc"
+    ],
+    "portable_verifier_uses_package_relative_inputs": true
+  },
+  "schema": "BEAT174-QFA-PORTABLE-QUOTIENT-UB-MANIFEST-02",
+  "scientific_guards": {
+    "F0_exact": true,
+    "S_quotient_exact": true,
+    "classical_control": true,
+    "equality_normalized_constants_match": true,
+    "equality_normalized_row_bijection": true,
+    "independent_lp_optimal": true,
+    "independent_lp_same_certificate": true,
+    "legacy_equalities_independent_exact": true,
+    "moments_real": true,
+    "new_bound_above_quantum_lb": true,
+    "new_bound_strictly_improves": true,
+    "new_claim_match": true,
+    "objective_quotient_exact": true,
+    "old_anchor_exact": true,
+    "quantum_control": true,
+    "raw_counts_51480": true,
+    "stored_E_exact": true,
+    "stored_Q_exact": true,
+    "stored_e0_exact": true,
+    "transfer_claim_match": true,
+    "transfer_projection_exact": true,
+    "witness_nu_replay_match": true
+  }
+}
