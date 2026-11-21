@@ -1,0 +1,62 @@
+{
+ "beat": 130,
+ "id": "BP-09",
+ "debt": "DEBT-BOUND06-D4-01",
+ "theorem": "RAC-4 quantum value <= 0.7537703608 (certified, symmetry-twirled NPA 1+AB)",
+ "numeric_collapse": {
+  "level": "1+AB",
+  "primal_obj": 0.74999987,
+  "dual_obj": 0.75001,
+  "note": "numerically exactly 3/4; exactness NOT certified (solver precision)"
+ },
+ "certified": {
+  "RAC4_1AB_twirl": {
+   "cert": 0.7537703608,
+   "dualobj": 0.7499321113,
+   "pen": 4.4e-13,
+   "rnorm_L1": 0.00384,
+   "witness": "y_best.npz"
+  },
+  "RAC4_L1_twirl": {
+   "cert": 0.7803301383,
+   "obj": 0.7803300859,
+   "cross_check": "matches (2+3*sqrt(2))/8 = 0.7803300858899106 (BP-08)"
+  },
+  "W_1AB_twirl": {
+   "cert": 0.744135178,
+   "obj": 0.7441202857,
+   "cross_check": "beats BP-08 W-1AB cert 0.7441360147 (independent solver)"
+  },
+  "classical_5over8": {
+   "obj": 0.625,
+   "status": "feasible in twirled system (PSD to 8e-15)"
+  }
+ },
+ "interval": {
+  "quantum_value_in": [
+   0.75,
+   0.7537703608
+  ],
+  "L1_UB": 0.7803301383,
+  "narrowing_vs_L1": "5.3x"
+ },
+ "engine": {
+  "method": "commuting-operator NPA, twirled over T x S = Z4^2 x Z4 (G=64)",
+  "blocks": 36,
+  "block_sizes": "[36]+[35]*2+[34]*14+[33]*19",
+  "z_vars": 28439,
+  "orbits": 36,
+  "solver": "over-relaxed ADMM (mu=0.2, alpha=1.6) + CG inner solve + ergodic Ybar + LSQR/PSD polish rounds",
+  "certificate": "z-form: dualobj + pen + ||r||_1, iterate-agnostic, valid for any Hermitian Y"
+ },
+ "verify": "python3 verify_bound09.py quick|full -> 5/5 PASS (EXIT 0)",
+ "files": [
+  "npa_twirl.py",
+  "test_twirl.py",
+  "facial_polish.py",
+  "fista_face.py",
+  "verify_bound09.py",
+  "y_best.npz",
+  "ladder_results.json"
+ ]
+}

@@ -1,0 +1,90 @@
+{
+ "beat": 129,
+ "id": "BOUND-PROOF-08",
+ "date": "2026-10-13",
+ "scope": "d=4 EA-RAC quantum upper bounds via commuting-operator NPA; W-game adjudication; hierarchy tightening",
+ "machinery": {
+  "relaxation": "commuting-operator NPA, letters = per-side PVM projectors (Naimark), real-symmetric moment matrix WLOG",
+  "solver": "custom ADMM (Wen-Goldfarb-Yin dual form), scipy solve_triangular, deterministic from zero init",
+  "certificate": "max<C,X> <= -b^T y + max(0,-lam_min(D))*trX, D=Cv-A^T y; trX fixed by completeness (RAC4:25, W-L1:7, W-1AB:15)",
+  "validation": "d=2 RAC level-1 reproduces known exact (2+sqrt2)/4 to 1e-10; classical optimal 5/8 strategies feasible (residual 0) in all three constraint systems"
+ },
+ "results": {
+  "rac_d2_L1": {
+   "cert": 0.8535533906,
+   "exact": "(2+sqrt2)/4",
+   "status": "validated"
+  },
+  "rac_d4_L1": {
+   "cert": 0.7803300859,
+   "closed_form": "(2+3*sqrt2)/8",
+   "lam_min": -1.1e-14,
+   "pres": 3.9e-14,
+   "iters": 1500,
+   "mu": 0.05,
+   "status": "first nontrivial certified UB for d=4 EA-RAC quantum value; interval now [3/4, (2+3sqrt2)/8]"
+  },
+  "W_L1_corrected": {
+   "cert": 0.7803300859,
+   "closed_form": "(2+3*sqrt2)/8",
+   "note": "identical to RAC-4 L1 value to 10 digits: affine reduction preserves level-1 relaxation value"
+  },
+  "W_1AB": {
+   "cert": 0.7441360147,
+   "lam_min": -1.1e-06,
+   "pres": 3.7e-08,
+   "iters": 2400,
+   "mu": 0.05,
+   "N": 153,
+   "rows": 7421,
+   "trajectory": {
+    "1200": 0.748664596,
+    "1600": 0.7442005552,
+    "2000": 0.744152985,
+    "2400": 0.7441360147
+   },
+   "status": "gap vs see-saw LB 0.7404886669 narrowed 0.0398 -> 0.00365 (10x tightening)"
+  },
+  "see_saw_W_LB": {
+   "value": 0.7404886669,
+   "reproduced": [
+    0.7404885021,
+    0.7404886669
+   ],
+   "dims": [
+    4,
+    5,
+    6
+   ],
+   "moment_matrix_check": "feasible in corrected W-L1 system: residual 3.1e-16, eigmin -1.6e-16, objective 0.7404886669"
+  }
+ },
+ "adjudication": {
+  "issue": "first W-NPA encoding returned 0.6730167462 < see-saw 0.7404886669 (impossible for a relaxation)",
+  "root_cause": "letter-namespace collision: Alice (u,a) and Bob (y,b) were bare 2-tuples; dict keys aliased Bob letters onto Alice slots -> void program",
+  "fix": "side-tagged letters ('A',u,a)/('B',y,b); regression check namespace-disjointness added to verifier",
+  "disposition": "0.6730167462 was output of a void encoding; never certified anything; BP-07 W_q=0.74048866 VINDICATED, no erratum required",
+  "rule_check": "互纠三条 honored: anomaly caught by cross-validation, fixed at source, documented"
+ },
+ "intervals": {
+  "rac_d4_quantum": [
+   "3/4 (bp07 LB)",
+   "(2+3*sqrt2)/8 = 0.7803300859 (L1 UB)"
+  ],
+  "W_quantum": [
+   "0.7404886669 (see-saw LB)",
+   "0.7441360147 (1AB UB)"
+  ]
+ },
+ "next": [
+  "symmetry-twirled 1AB/level-2 for RAC-4 (translation Z4^2 x msg-shift Z4 x swap x unit-mult; abelian part gives 64 blocks ~33x33)",
+  "analytic level-1 dual certificate from y4 (stored y4_dual.npy)",
+  "W level-2 to decide whether see-saw 0.7404886669 or ~0.7441 is tight"
+ ],
+ "files": {
+  "verify": "verify_bound08.py",
+  "core": "npa_core.py",
+  "1ab": "npa_1ab.py",
+  "data": "npa_stage1.json"
+ }
+}

@@ -1,0 +1,113 @@
+{
+  "acceptance_status": "PASS_NUMERIC_EVIDENCE_AND_INDEPENDENT_REPLAY__EXACT_OBJECTIVE_NOT_CLOSED",
+  "answer_path": "outbox/ANS-BEAT173-LINEAGE-COLLAB-01-qfa.json",
+  "canonical_quick": {
+    "artifact": "rac4-canonical-2000.json",
+    "boundary": "quick 2000 only; not full and not converged",
+    "verdict": "VALID_BUT_NOT_IMPROVED_OR_NOT_CONVERGED"
+  },
+  "evidence": {
+    "exact_commands": [
+      {
+        "command": [
+          "python3",
+          "inputs/verify_bound07.py"
+        ],
+        "cwd": "research/beat173-qfa-ub",
+        "exit_file": "portable-bound07.rc",
+        "process_exit": 0,
+        "stdout_log": "portable-bound07.log"
+      },
+      {
+        "command": [
+          "python3",
+          "independent_verify_completeness.py"
+        ],
+        "cwd": "research/beat173-qfa-ub",
+        "process_exit": 0,
+        "result": "portable-replay-result.json"
+      }
+    ],
+    "independent_replay_verdict": "PASS_INDEPENDENT_NUMERIC_UB_0_7527858612248398__EXACT_3_OVER_4_NOT_PROVEN",
+    "manifest_file_count": 37,
+    "manifest_sha256": "f3f5f284c907ba3762b472f3017c33d6d31a854eeb55493f46f4b1908be18b53",
+    "negative_controls": {
+      "completeness_violation_detected": true,
+      "nonpsd_min_eigenvalue": -1.0000000000000009,
+      "removing_multipliers_increases_residual": true
+    },
+    "original_independent_replay_sha256": "39c16ba2bffb283cc6fc2cf4de6b2464175ff6d7542da6171ddd841e402b72c2",
+    "package_hygiene": {
+      "bytecode_disabled_for_fresh_commands": true,
+      "cache_files": 0,
+      "fresh_outputs_started_absent": [
+        "portable-bound07.log",
+        "portable-bound07.rc",
+        "portable-replay-result.json"
+      ],
+      "portable_verifier_uses_package_relative_inputs": true
+    },
+    "package_path": "research/beat173-qfa-ub",
+    "portable_replay_sha256": "69269200456b455416887296250be2bbeaff1905660e22328ceeb4c48044c7d2",
+    "portable_run_receipt_sha256": "436b67b5f5a926139d61d98a37ac9592c7278b0fbf1980bb00969da6044ed930",
+    "positive_controls": {
+      "all_guards": {
+        "cert_improves_generation_01": true,
+        "cert_improves_previous": true,
+        "cert_not_below_lb_1e-7": true,
+        "claim_numeric_match": true,
+        "classical_positive_control": true,
+        "completeness_negative_control": true,
+        "equality_matrix_independent_match": true,
+        "known_quantum_lb_replayed": true,
+        "nonpsd_negative_control": true,
+        "residual_negative_control": true
+      },
+      "classical_5_8": true,
+      "quantum_lower_bound_0_75_fresh_process": true
+    }
+  },
+  "failed_generation_02": {
+    "reason": "Guard-accounting self-mutation; no numerical failure and no manifest or answer was emitted for generation 02.",
+    "run_receipt_sha256": "fc8e8d043eb73b63ca0a6a837a63a04cfb125a01f80e27d0b9b12e4c951a7d36"
+  },
+  "generation": 3,
+  "lane": "qfa",
+  "machine_answer": true,
+  "open_items": [
+    "Exact full d=4 EARAC quantum<=3/4 remains CONJECTURE, not proven.",
+    "No claim that quantum value is exactly 3/4.",
+    "NPA/EARAC model equivalence and external novelty remain OPEN.",
+    "Canonical full run and convergence remain OPEN; quick 2000 is not full.",
+    "Further Y/nu joint polish is optional new-generation work, not covered by this fixed-Y certificate.",
+    "Machine answer is not seat approval."
+  ],
+  "public_safe": true,
+  "schema": "BEAT173-QFA-SUBSTANTIVE-PARTIAL-ANSWER-03",
+  "scientific_result": {
+    "classical": "5/8 EXACT",
+    "dualobj": 0.7499583863315665,
+    "improvement": 0.00098449952939339,
+    "model_boundary": "same frozen twirled 1+AB NPA model with explicit exact POVM completeness equalities; floating-point dual certificate only",
+    "new_numeric_upper_bound": 0.7527858612248398,
+    "old_numeric_upper_bound": 0.7537703607542332,
+    "psd_penalty": 4.361831694010912e-13,
+    "quantum_lower_bound": ">=3/4 certified construction",
+    "residual_l1": 0.0028274748928370516
+  },
+  "seat_answer": false,
+  "self_publication": {
+    "answer_commit": null,
+    "status": "EXTERNAL_FIXED_COMMIT_AND_REMOTE_REPLAY_REQUIRED"
+  },
+  "source_task_commit": "32907e42bb9d7e5be5555eab8665eb4a13714a06",
+  "source_task_file": "inbox/TASK-BEAT173-LINEAGE-COLLAB-01-qfa-20261121.md",
+  "supersedes_generation_01": {
+    "answer_sha256": "d815bbe3544b3f5572989ee019d935d887d2839e49dc6d4d5e4594d11fb10506",
+    "manifest_sha256": "8bf731c2e8153955191180cba8f0ef5e026d5bcdc9f87e9da0017f01d6d54eca",
+    "reason": "Bytecode-free package and fresh -B replay; no scientific conclusion changed."
+  },
+  "task": "T-B173-QFA-01",
+  "ts": "2026-11-21T08:43:17.162184Z",
+  "verdict": "PARTIAL_SUBSTANTIVE_NUMERIC_UB_IMPROVEMENT__EXACT_BP07_TARGET_OPEN"
+}

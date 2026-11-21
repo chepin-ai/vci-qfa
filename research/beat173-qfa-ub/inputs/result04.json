@@ -1,0 +1,30 @@
+{
+ "theorem_A": "classical (2->1,Z_N) RAC with arbitrary shared+local randomness: S_max=(1+1/N)/2, tight",
+ "proof_A": "mixture convexity reduces to BP-03 deterministic max; tightness inherited from f(x)=x1,g(m,y)=m",
+ "theorem_B": "witness bound 1/2(1+sqrt(r/8)) non-tight at r=1: formula 0.6767767 > tight achievable 0.625 (looseness 0.0517767); endpoint r=8 trivially tight (=1.0)",
+ "premise": "QRAC-HD protocol form per BP-02 sec.0: classical randomized one-Z_4-symbol communication + Schmidt-r shared state; conditional-honesty clause: re-examine if message-alphabet spec changes",
+ "machine": {
+  "exact_small_N": {
+   "N=2": "6/8=0.75",
+   "N=3": "12/18=0.66667",
+   "impl": "fiber-majority decode (independent impl #2 of BP-03)"
+  },
+  "mixture_mc": {
+   "trials": 120000,
+   "N": [
+    2,
+    3,
+    4
+   ],
+   "violations": 0
+  },
+  "certificates": {
+   "witness_r1": 0.6767766952966369,
+   "tight_classical": 0.625,
+   "looseness": 0.05177669529663687,
+   "endpoint_r8": 1.0
+  }
+ },
+ "errata": "ERRATA-BP03-01: BP-03 ladder_note attribution corrected — gap is tight-vs-loose bound values, NOT an achieved shared-randomness advantage (Th A: shared randomness adds exactly 0 on classical axis)",
+ "wildq": "qfa-18 minted (witness tightness spectrum, r=2..7); qfa-16 deepened (second kind of yiyi evidence at r=1)"
+}

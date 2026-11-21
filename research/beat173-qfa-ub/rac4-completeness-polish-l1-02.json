@@ -1,0 +1,47 @@
+{
+  "artifact": "rac4-completeness-polish-l1-02.npz",
+  "boundary": "Fixed-Y convex L1 optimization with exact completeness multipliers. Floating-point bound only; not an exact 3/4 theorem.",
+  "ended_utc": "2026-11-21T04:13:08.063421Z",
+  "guards": {
+    "improves_lsqr_generation_01": true,
+    "improves_previous_ub": true,
+    "known_quantum_lb": 0.75,
+    "not_below_known_lb_1e-7": true,
+    "previous_valid_ub": 0.7537703608
+  },
+  "inputs": {
+    "equality_matrix_sha256": "67a76bb877d37f0687628d1bed69174f637258d533da01bf72c9763841dfa446",
+    "old_witness_sha256": "ba60a46b86fc87c2c25c96d235ef98a2f755c111becf0863b3272a6ca52692ff"
+  },
+  "new_certificate": {
+    "base_dualobj": 0.7499321113469367,
+    "cert": 0.7527858612248398,
+    "dualobj": 0.7499583863315665,
+    "equality_dualobj": 2.6274984629868294e-05,
+    "min_psd_eigenvalue": -3.284489683125016e-17,
+    "psd_penalty": 4.361831694010912e-13,
+    "residual_l1": 0.0028274748928370516,
+    "residual_l2": 0.00010278191713774864,
+    "residual_linf": 7.003650583466619e-05
+  },
+  "old_certificate": {
+    "cert": 0.7537703607542332,
+    "dualobj": 0.7499321113469367,
+    "psd_penalty": 4.361831694010912e-13,
+    "residual_l1": 0.0038382494068603078
+  },
+  "optimization": {
+    "constraints": 56876,
+    "message": "Optimization terminated successfully. (HiGHS Status 7: Optimal)",
+    "nit": 3607,
+    "objective_without_constant": 0.002853619014061694,
+    "solver": "scipy.optimize.linprog/HiGHS",
+    "status": 0,
+    "variables": 29183
+  },
+  "schema": "BEAT173-QFA-POVM-COMPLETENESS-DUAL-L1-02",
+  "source_sha256": "4760213deadf4c236223c159c5ce0618e5bb5697c9a1b90f20c354f44ced929b",
+  "started_utc": "2026-11-21T04:12:56.579768Z",
+  "verdict": "PASS_L1_OPTIMIZED_NUMERIC_DUAL_UB__INDEPENDENT_REPLAY_REQUIRED",
+  "wall_seconds": 11.483653545379639
+}

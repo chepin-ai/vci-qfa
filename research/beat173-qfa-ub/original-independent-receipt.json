@@ -1,0 +1,52 @@
+{
+  "boundary": "Independent floating-point dual recomputation only. It improves the numeric UB but does not prove quantum<=3/4, exactness, model equivalence, novelty, or seat approval.",
+  "equation_system": {
+    "nnz": 3679,
+    "raw": 51480,
+    "unique": 745,
+    "variables": 28438
+  },
+  "guards": {
+    "cert_improves_generation_01": true,
+    "cert_improves_previous": true,
+    "cert_not_below_lb_1e-7": true,
+    "claim_numeric_match": true,
+    "classical_positive_control": true,
+    "completeness_negative_control": true,
+    "equality_matrix_independent_match": true,
+    "known_quantum_lb_replayed": true,
+    "nonpsd_negative_control": true,
+    "residual_negative_control": true
+  },
+  "inputs_sha256": {
+    "claim": "3939fadc000b19e8caaf4157d4c1f69f4313fd94b092c90e8e0abb49ecd32546",
+    "equalities": "67a76bb877d37f0687628d1bed69174f637258d533da01bf72c9763841dfa446",
+    "lb_log": "4c4fd8b750ba97b8c922785e236afe5f96a54d9f364baa47a8a0102a3e29cbe6",
+    "npa_twirl": "bd66b9d16025604baf5e9cfbbe7f12b187b850990e15b3547adc298cb028dd3f",
+    "original_y": "ba60a46b86fc87c2c25c96d235ef98a2f755c111becf0863b3272a6ca52692ff",
+    "test_twirl": "5448b43d31c135f744f66b550d0b76c17954f86582bb0ebf9887ca4ed6740b5c",
+    "witness": "9ff8b2728f7bd48b6cd45d4adb80fba9624d890179363203d36c672522bf4a7f"
+  },
+  "negative_controls": {
+    "completeness_violation_detected": true,
+    "nonpsd_min_eigenvalue": -1.0000000000000009,
+    "removing_multipliers_increases_residual": true
+  },
+  "old_cert_recomputed": 0.7537703607542332,
+  "recomputed": {
+    "base_dualobj": 0.7499321113469367,
+    "cert": 0.7527858612248398,
+    "dualobj": 0.7499583863315665,
+    "equality_dualobj": 2.6274984629868294e-05,
+    "min_psd_eigenvalue": -3.284489683125016e-17,
+    "psd_penalty": 4.361831694010912e-13,
+    "residual_l1": 0.0028274748928370516,
+    "residual_l2": 0.00010278191713774864,
+    "residual_linf": 7.003650583466619e-05
+  },
+  "remote_writes": 0,
+  "schema": "BEAT173-QFA-UPPER-BOUND-INDEPENDENT-REPLAY-01",
+  "ts": "2026-11-21T04:27:30.934152Z",
+  "verdict": "PASS_INDEPENDENT_NUMERIC_UB_0_7527858612248398__EXACT_3_OVER_4_NOT_PROVEN",
+  "verifier_source_sha256": "1066f14936176eb44e1af641edf2ddb94ea7fe5b9363482b9c82e88c039a33cf"
+}
